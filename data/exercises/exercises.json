@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ex-1",
+    "type": "cloze",
+    "category": "Verben mit Präpositionen",
+    "level": "B1",
+    "promptTr": "Cümledeki boşlukları doğru edat ve artikelle doldurun.",
+    "promptEn": "Fill in the blanks with the correct preposition and article.",
+    "sentenceParts": ["Ich warte seit einer halben Stunde ", " ", " Bus."],
+    "options": ["auf den", "an dem", "für das", "auf dem"],
+    "correctAnswer": "auf den",
+    "explanationTr": "'warten auf' Akkusativ alır. 'der Bus' -> 'den Bus'.",
+    "explanationEn": "'warten auf' takes the Akkusativ case. 'der Bus' becomes 'den Bus'."
+  },
+  {
+    "id": "ex-2",
+    "type": "cloze",
+    "category": "Konnektoren",
+    "level": "B1",
+    "promptTr": "Doğru bağlacı seçin (Cümle yapısına dikkat edin).",
+    "promptEn": "Choose the correct connector (Pay attention to the sentence structure).",
+    "sentenceParts": ["Er bleibt heute zu Hause, ", " er eine schwere Erkältung hat."],
+    "options": ["weil", "denn", "deshalb", "trotzdem"],
+    "correctAnswer": "weil",
+    "explanationTr": "Fiil sonda ('hat'), bu yüzden bir Nebensatz bağlacı olan 'weil' gereklidir. 'denn' olsaydı fiil 2. pozisyonda olurdu.",
+    "explanationEn": "The verb is at the end ('hat'), requiring the subordinate conjunction 'weil'. 'denn' would keep the verb in position 2."
+  },
+  {
+    "id": "ex-3",
+    "type": "cloze",
+    "category": "Konnektoren",
+    "level": "B1",
+    "promptTr": "Pozisyon 1 kuralına uygun bağlacı seçin.",
+    "promptEn": "Select the connector fitting the Position 1 rule.",
+    "sentenceParts": ["Es regnet in Strömen, ", " geht sie ohne Regenschirm spazieren."],
+    "options": ["trotzdem", "obwohl", "aber", "weil"],
+    "correctAnswer": "trotzdem",
+    "explanationTr": "Fiil hemen bağlaçtan sonra geliyor ('geht sie' - Pos 2). Dolayısıyla Konjunktionaladverb olan 'trotzdem' doğrudur.",
+    "explanationEn": "The verb immediately follows the connector ('geht sie' - Pos 2). Thus, the adverbial connector 'trotzdem' is correct."
+  },
+  {
+    "id": "ex-4",
+    "type": "cloze",
+    "category": "Verben mit Präpositionen",
+    "level": "B1",
+    "promptTr": "'sich freuen' fiilinin doğru edatını seçin.",
+    "promptEn": "Select the right preposition for 'sich freuen' in this context.",
+    "sentenceParts": ["Wir freuen uns alle sehr ", " den geplanten Urlaub im Juli."],
+    "options": ["auf", "über", "an", "von"],
+    "correctAnswer": "auf",
+    "explanationTr": "Gelecekteki bir olay için 'sich freuen auf + Akk' kullanılır.",
+    "explanationEn": "For future events or anticipation, 'sich freuen auf + Akk' is used."
+  },
+  {
+    "id": "ex-5",
+    "type": "sentence_builder",
+    "category": "Satzbau (Nebensatz)",
+    "level": "B1",
+    "promptTr": "Kelimeleri doğru Nebensatz (fiil sonda) sırasına dizin.",
+    "promptEn": "Arrange the words into the correct subordinate clause (verb at end) order.",
+    "words": ["weil", "er", "morgen", "eine", "Prüfung", "hat"],
+    "correctOrder": ["weil", "er", "morgen", "eine", "Prüfung", "hat"],
+    "targetMeaningTr": "...çünkü yarın bir sınavı var.",
+    "targetMeaningEn": "...because he has an exam tomorrow.",
+    "explanationTr": "Nebensatz kuralı: Bağlaç (weil) + Özne (er) + Zaman/Nesne (morgen eine Prüfung) + Çekimli Fiil sonda (hat).",
+    "explanationEn": "Subordinate clause rule: Conjunction (weil) + Subject (er) + Time/Object + Conjugated verb at the very end (hat)."
+  },
+  {
+    "id": "ex-6",
+    "type": "sentence_builder",
+    "category": "Satzbau (Adverbial - Pos 1)",
+    "level": "B1",
+    "promptTr": "Kelimeleri doğru Konjunktionaladverb (fiil 2. pozisyonda) sırasına dizin.",
+    "promptEn": "Arrange the words following the Adverbial connector (verb second) rule.",
+    "words": ["deshalb", "bleibe", "ich", "heute", "zu", "Hause"],
+    "correctOrder": ["deshalb", "bleibe", "ich", "heute", "zu", "Hause"],
+    "targetMeaningTr": "Bu yüzden bugün evde kalıyorum.",
+    "targetMeaningEn": "Therefore I am staying home today.",
+    "explanationTr": "'deshalb' 1. pozisyondadır, fiil 'bleibe' hemen 2. pozisyona gelir, özne 'ich' 3. pozisyona geçer.",
+    "explanationEn": "'deshalb' occupies position 1, verb 'bleibe' immediately takes position 2, subject 'ich' takes position 3."
+  }
+]

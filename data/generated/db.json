@@ -1,0 +1,1658 @@
+{
+  "metadata": {
+    "lastSynced": "2026-11-03T20:08:59.471Z",
+    "totalVocabulary": 29,
+    "totalConnectors": 18,
+    "totalNotes": 3,
+    "totalGraphNodes": 65,
+    "totalGraphEdges": 33,
+    "totalExercises": 6
+  },
+  "vocabulary": [
+    {
+      "id": "verb-warten",
+      "german": "warten",
+      "type": "verb",
+      "preposition": "auf",
+      "governedCase": "Akk",
+      "meaningTr": "birini/bir şeyi beklemek",
+      "meaningEn": "to wait for",
+      "example": "Ich warte auf den Bus an der Haltestelle.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie wartent",
+        "perfekt": "hat wartent"
+      }
+    },
+    {
+      "id": "verb-sich-freuen",
+      "german": "sich freuen",
+      "type": "verb",
+      "preposition": "auf",
+      "governedCase": "Akk",
+      "meaningTr": "gelecekteki bir şeye sevinmek",
+      "meaningEn": "to look forward to",
+      "example": "Wir freuen uns auf den kommenden Sommer.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie freuent sich",
+        "perfekt": "hat sich freuent"
+      }
+    },
+    {
+      "id": "verb-sich-freuen",
+      "german": "sich freuen",
+      "type": "verb",
+      "preposition": "über",
+      "governedCase": "Akk",
+      "meaningTr": "olmuş bir şeye sevinmek",
+      "meaningEn": "to be happy about (past/present)",
+      "example": "Er freut sich über das schöne Geschenk.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie freuent sich",
+        "perfekt": "hat sich freuent"
+      }
+    },
+    {
+      "id": "verb-denken",
+      "german": "denken",
+      "type": "verb",
+      "preposition": "an",
+      "governedCase": "Akk",
+      "meaningTr": "birini/bir şeyi düşünmek",
+      "meaningEn": "to think of/about",
+      "example": "Ich denke oft an meine Schulzeit.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie denkent",
+        "perfekt": "hat denkent"
+      }
+    },
+    {
+      "id": "verb-hoffen",
+      "german": "hoffen",
+      "type": "verb",
+      "preposition": "auf",
+      "governedCase": "Akk",
+      "meaningTr": "bir şeyi umut etmek",
+      "meaningEn": "to hope for",
+      "example": "Alle hoffen auf besseres Wetter am Wochenende.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie hoffent",
+        "perfekt": "hat hoffent"
+      }
+    },
+    {
+      "id": "verb-sich-interessieren",
+      "german": "sich interessieren",
+      "type": "verb",
+      "preposition": "für",
+      "governedCase": "Akk",
+      "meaningTr": "bir şeyle ilgilenmek",
+      "meaningEn": "to be interested in",
+      "example": "Sie interessiert sich sehr für moderne Architektur.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie interessierent sich",
+        "perfekt": "hat sich interessierent"
+      }
+    },
+    {
+      "id": "verb-sich-konzentrieren",
+      "german": "sich konzentrieren",
+      "type": "verb",
+      "preposition": "auf",
+      "governedCase": "Akk",
+      "meaningTr": "bir şeye odaklanmak",
+      "meaningEn": "to concentrate on",
+      "example": "Bitte konzentrieren Sie sich auf die Prüfung.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie konzentrierent sich",
+        "perfekt": "hat sich konzentrierent"
+      }
+    },
+    {
+      "id": "verb-sich-erinnern",
+      "german": "sich erinnern",
+      "type": "verb",
+      "preposition": "an",
+      "governedCase": "Akk",
+      "meaningTr": "bir şeyi hatırlamak",
+      "meaningEn": "to remember",
+      "example": "Erinnerst du dich noch an unseren ersten Urlaub?",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie erinnernt sich",
+        "perfekt": "hat sich erinnernt"
+      }
+    },
+    {
+      "id": "verb-sich-bewerben",
+      "german": "sich bewerben",
+      "type": "verb",
+      "preposition": "um",
+      "governedCase": "Akk",
+      "meaningTr": "bir işe/bursa başvurmak",
+      "meaningEn": "to apply for",
+      "example": "Er bewirbt sich um eine Stelle als Ingenieur.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie bewerbent sich",
+        "perfekt": "hat sich bewerbent"
+      }
+    },
+    {
+      "id": "verb-sprechen",
+      "german": "sprechen",
+      "type": "verb",
+      "preposition": "mit",
+      "governedCase": "Dat",
+      "meaningTr": "biriyle konuşmak",
+      "meaningEn": "to speak with",
+      "example": "Ich muss dringend mit dem Arzt sprechen.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie sprechent",
+        "perfekt": "hat sprechent"
+      }
+    },
+    {
+      "id": "verb-telefonieren",
+      "german": "telefonieren",
+      "type": "verb",
+      "preposition": "mit",
+      "governedCase": "Dat",
+      "meaningTr": "biriyle telefonda görüşmek",
+      "meaningEn": "to speak on phone with",
+      "example": "Sie telefoniert gerade mit ihrer Mutter.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie telefonierent",
+        "perfekt": "hat telefonierent"
+      }
+    },
+    {
+      "id": "verb-teilnehmen",
+      "german": "teilnehmen",
+      "type": "verb",
+      "preposition": "an",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeye katılmak",
+      "meaningEn": "to participate in",
+      "example": "Wer nimmt an dem Workshop teil?",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie teilnehment",
+        "perfekt": "hat teilnehment"
+      }
+    },
+    {
+      "id": "verb-träumen",
+      "german": "träumen",
+      "type": "verb",
+      "preposition": "von",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeyin hayalini kurmak",
+      "meaningEn": "to dream of",
+      "example": "Er träumt von einem Leben am Meer.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie träument",
+        "perfekt": "hat träument"
+      }
+    },
+    {
+      "id": "verb-suchen",
+      "german": "suchen",
+      "type": "verb",
+      "preposition": "nach",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeyi aramak",
+      "meaningEn": "to look for",
+      "example": "Die Polizei sucht nach dem Zeugen.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie suchent",
+        "perfekt": "hat suchent"
+      }
+    },
+    {
+      "id": "verb-gratulieren",
+      "german": "gratulieren",
+      "type": "verb",
+      "preposition": "zu",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeyi tebrik etmek",
+      "meaningEn": "to congratulate on",
+      "example": "Wir gratulieren dir herzlich zum Geburtstag!",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie gratulierent",
+        "perfekt": "hat gratulierent"
+      }
+    },
+    {
+      "id": "verb-gehören",
+      "german": "gehören",
+      "type": "verb",
+      "preposition": "zu",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeye/gruba ait olmak",
+      "meaningEn": "to belong to",
+      "example": "Das gehört nicht zu meinen Aufgaben.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie gehörent",
+        "perfekt": "hat gehörent"
+      }
+    },
+    {
+      "id": "verb-abhängen",
+      "german": "abhängen",
+      "type": "verb",
+      "preposition": "von",
+      "governedCase": "Dat",
+      "meaningTr": "bir şeye bağlı olmak",
+      "meaningEn": "to depend on",
+      "example": "Der Erfolg hängt von unserer Vorbereitung ab.",
+      "level": "B1",
+      "conjugation": {
+        "prasens3rd": "er/sie abhängent",
+        "perfekt": "hat abhängent"
+      }
+    },
+    {
+      "id": "noun-bewerbung",
+      "german": "Bewerbung",
+      "article": "die",
+      "plural": "Bewerbung-en",
+      "type": "substantiv",
+      "meaningTr": "başvuru",
+      "meaningEn": "application",
+      "level": "B1"
+    },
+    {
+      "id": "noun-vorstellungsgespräch",
+      "german": "Vorstellungsgespräch",
+      "article": "das",
+      "plural": "Vorstellungsgespräch-e",
+      "type": "substantiv",
+      "meaningTr": "iş mülakatı",
+      "meaningEn": "job interview",
+      "level": "B1"
+    },
+    {
+      "id": "noun-arbeitgeber",
+      "german": "Arbeitgeber",
+      "article": "der",
+      "plural": "Arbeitgeber-",
+      "type": "substantiv",
+      "meaningTr": "işveren",
+      "meaningEn": "employer",
+      "level": "B1"
+    },
+    {
+      "id": "noun-herausforderung",
+      "german": "Herausforderung",
+      "article": "die",
+      "plural": "Herausforderung-en",
+      "type": "substantiv",
+      "meaningTr": "meydan okuma, zorluk",
+      "meaningEn": "challenge",
+      "level": "B1"
+    },
+    {
+      "id": "noun-beständigkeit",
+      "german": "Beständigkeit",
+      "article": "die",
+      "type": "substantiv",
+      "meaningTr": "istikrar, süreklilik",
+      "meaningEn": "consistency",
+      "level": "B1"
+    },
+    {
+      "id": "noun-labyrinth",
+      "german": "Labyrinth",
+      "article": "das",
+      "plural": "Labyrinth-e",
+      "type": "substantiv",
+      "meaningTr": "labirent",
+      "meaningEn": "maze",
+      "level": "B1"
+    },
+    {
+      "id": "noun-projektleiter",
+      "german": "Projektleiter",
+      "article": "der",
+      "plural": "Projektleiter-",
+      "type": "substantiv",
+      "meaningTr": "proje yöneticisi",
+      "meaningEn": "project manager",
+      "level": "B1"
+    },
+    {
+      "id": "verb-die-beständigkeit",
+      "german": "die Beständigkeit",
+      "type": "verb",
+      "meaningTr": "istikrar, süreklilik",
+      "meaningEn": "consistency",
+      "example": "",
+      "level": "B1"
+    },
+    {
+      "id": "verb-vorbereiten",
+      "german": "vorbereiten",
+      "type": "verb",
+      "governedCase": "Akk",
+      "meaningTr": "bir şeye hazırlanmak",
+      "meaningEn": "to prepare for",
+      "example": "Er bereitet sich auf das Vorstellungsgespräch vor.",
+      "level": "B1"
+    },
+    {
+      "id": "verb-entsprechen",
+      "german": "entsprechen",
+      "type": "verb",
+      "governedCase": "Dat",
+      "meaningTr": "uygun düşmek, denk gelmek",
+      "meaningEn": "to correspond to",
+      "example": "Das Gehalt entspricht seinen Erwartungen.",
+      "level": "B1"
+    },
+    {
+      "id": "verb-anbieten",
+      "german": "anbieten",
+      "type": "verb",
+      "meaningTr": "teklif etmek",
+      "meaningEn": "to offer",
+      "example": "Der Chef bietet ihm eine Stelle an.",
+      "level": "B1"
+    },
+    {
+      "id": "verb-verlaufen",
+      "german": "verlaufen",
+      "type": "verb",
+      "meaningTr": "geçmek, seyretmek",
+      "meaningEn": "to proceed",
+      "example": "Das Treffen verlief positiv.",
+      "level": "B1"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "conn-aber",
+      "name": "aber",
+      "group": "position_0",
+      "groupTitleTr": "Pozisyon 0 (ADUSO)",
+      "groupTitleEn": "Position 0 (ADUSO)",
+      "formula": "Hauptsatz + aber + Subjekt + Verb + ...",
+      "meaningTr": "ama, fakat",
+      "meaningEn": "but, however",
+      "example": "Ich wollte kommen, aber ich hatte leider keine Zeit.",
+      "level": "A1-B1",
+      "notesTr": "Cümledeki özne ve fiil sırası değişmez (Pozisyon 0).",
+      "notesEn": "Does not shift word order. Occupies slot 0."
+    },
+    {
+      "id": "conn-denn",
+      "name": "denn",
+      "group": "position_0",
+      "groupTitleTr": "Pozisyon 0 (ADUSO)",
+      "groupTitleEn": "Position 0 (ADUSO)",
+      "formula": "Hauptsatz + denn + Subjekt + Verb + ...",
+      "meaningTr": "çünkü",
+      "meaningEn": "because, for",
+      "example": "Er lernt Deutsch, denn er möchte in Berlin arbeiten.",
+      "level": "A2-B1",
+      "notesTr": "Pozisyon 0; 'weil' gibi fiili sona atmaz!",
+      "notesEn": "Position 0; does NOT send verb to end unlike 'weil'!"
+    },
+    {
+      "id": "conn-und",
+      "name": "und",
+      "group": "position_0",
+      "groupTitleTr": "Pozisyon 0 (ADUSO)",
+      "groupTitleEn": "Position 0 (ADUSO)",
+      "formula": "Hauptsatz + und + Subjekt + Verb + ...",
+      "meaningTr": "ve",
+      "meaningEn": "and",
+      "example": "Wir kochen zusammen und wir hören klassische Musik.",
+      "level": "A1",
+      "notesTr": "İki bağımsız ana cümleyi veya öğeyi bağlar.",
+      "notesEn": "Connects two independent main clauses or elements."
+    },
+    {
+      "id": "conn-sondern",
+      "name": "sondern",
+      "group": "position_0",
+      "groupTitleTr": "Pozisyon 0 (ADUSO)",
+      "groupTitleEn": "Position 0 (ADUSO)",
+      "formula": "nicht/kein... + , sondern + Subjekt + Verb + ...",
+      "meaningTr": "bilakis, aksine",
+      "meaningEn": "but rather, on the contrary",
+      "example": "Er trinkt keinen Kaffee, sondern er bevorzugt grünen Tee.",
+      "level": "A2-B1",
+      "notesTr": "Sadece ilk cümlede bir olumsuzluk ('nicht' / 'kein') olduğunda kullanılır.",
+      "notesEn": "Only used after a negative statement ('nicht' / 'kein')."
+    },
+    {
+      "id": "conn-oder",
+      "name": "oder",
+      "group": "position_0",
+      "groupTitleTr": "Pozisyon 0 (ADUSO)",
+      "groupTitleEn": "Position 0 (ADUSO)",
+      "formula": "Hauptsatz + oder + Subjekt + Verb + ...",
+      "meaningTr": "veya, ya da",
+      "meaningEn": "or",
+      "example": "Gehen wir heute ins Kino oder bleiben wir zu Hause?",
+      "level": "A1",
+      "notesTr": "Seçenek sunarken kullanılır. Pozisyon 0.",
+      "notesEn": "Presents alternatives. Position 0."
+    },
+    {
+      "id": "conn-weil",
+      "name": "weil",
+      "group": "nebensatz",
+      "groupTitleTr": "Nebensatz (Fiil Sonda)",
+      "groupTitleEn": "Subordinate (Verb at End)",
+      "formula": "..., weil + Subjekt + ... + VERB (Ende)",
+      "meaningTr": "çünkü, -dığı için",
+      "meaningEn": "because, since",
+      "example": "Ich gehe früh schlafen, weil ich morgen eine wichtige Prüfung habe.",
+      "level": "A2-B1",
+      "notesTr": "Yan cümle (Nebensatz) başlatır, çekimli fiil en sondadır.",
+      "notesEn": "Subordinating conjunction; conjugated verb is placed at the end."
+    },
+    {
+      "id": "conn-dass",
+      "name": "dass",
+      "group": "nebensatz",
+      "groupTitleTr": "Nebensatz (Fiil Sonda)",
+      "groupTitleEn": "Subordinate (Verb at End)",
+      "formula": "..., dass + Subjekt + ... + VERB (Ende)",
+      "meaningTr": "-ki, -diğini",
+      "meaningEn": "that",
+      "example": "Ich weiß, dass die deutsche Grammatik sehr präzise ist.",
+      "level": "A2-B1",
+      "notesTr": "Nesne yan cümlesi kurar. Fiil cümlenin en sonundadır.",
+      "notesEn": "Introduces content clauses. Verb at the end."
+    },
+    {
+      "id": "conn-obwohl",
+      "name": "obwohl",
+      "group": "nebensatz",
+      "groupTitleTr": "Nebensatz (Fiil Sonda)",
+      "groupTitleEn": "Subordinate (Verb at End)",
+      "formula": "..., obwohl + Subjekt + ... + VERB (Ende)",
+      "meaningTr": "-e rağmen, karşın",
+      "meaningEn": "although, even though",
+      "example": "Er geht spazieren, obwohl es draußen in Strömen regnet.",
+      "level": "B1",
+      "notesTr": "Zıtlık bildirir (Konzessiv). Fiil sonda.",
+      "notesEn": "Expresses concession. Verb at the end."
+    },
+    {
+      "id": "conn-wenn",
+      "name": "wenn",
+      "group": "nebensatz",
+      "groupTitleTr": "Nebensatz (Fiil Sonda)",
+      "groupTitleEn": "Subordinate (Verb at End)",
+      "formula": "Wenn + Subjekt + ... + Verb, [Verb + Subjekt...]",
+      "meaningTr": "eğer, zaman bildiren -ince/-dığında",
+      "meaningEn": "if, whenever, when",
+      "example": "Wenn ich freie Zeit habe, lese ich gern deutsche Romane.",
+      "level": "A2-B1",
+      "notesTr": "Koşul veya tekrarlanan zaman belirtir. Fiil sonda.",
+      "notesEn": "Conditional or recurring time. Verb at the end."
+    },
+    {
+      "id": "conn-damit",
+      "name": "damit",
+      "group": "nebensatz",
+      "groupTitleTr": "Nebensatz (Fiil Sonda)",
+      "groupTitleEn": "Subordinate (Verb at End)",
+      "formula": "..., damit + Subjekt + ... + VERB (Ende)",
+      "meaningTr": "-sin diye, -mesi amacıyla",
+      "meaningEn": "so that, in order that",
+      "example": "Er wiederholt täglich Vokabeln, damit er fließend Deutsch sprechen kann.",
+      "level": "B1",
+      "notesTr": "Amaç bildirir (Finalsatz). Özneler farklı olsa bile kullanılır.",
+      "notesEn": "Expresses purpose (Final clause). Used even with differing subjects."
+    },
+    {
+      "id": "conn-deshalb",
+      "name": "deshalb / darum / daher",
+      "group": "position_1",
+      "groupTitleTr": "Pozisyon 1 (Fiil Hemen Sonra)",
+      "groupTitleEn": "Position 1 (Verb Immediately Next)",
+      "formula": "Hauptsatz. Deshalb + VERB + Subjekt + ...",
+      "meaningTr": "bu yüzden, bu nedenle",
+      "meaningEn": "therefore, that's why",
+      "example": "Es hat stark geregnet, deshalb bin ich zu Hause geblieben.",
+      "level": "A2-B1",
+      "notesTr": "Pozisyon 1'dedir; çekimli fiil hemen ardından 2. pozisyonda gelir.",
+      "notesEn": "Position 1; conjugated verb immediately follows in position 2."
+    },
+    {
+      "id": "conn-trotzdem",
+      "name": "trotzdem",
+      "group": "position_1",
+      "groupTitleTr": "Pozisyon 1 (Fiil Hemen Sonra)",
+      "groupTitleEn": "Position 1 (Verb Immediately Next)",
+      "formula": "Hauptsatz. Trotzdem + VERB + Subjekt + ...",
+      "meaningTr": "buna rağmen, yine de",
+      "meaningEn": "nevertheless, anyway",
+      "example": "Es war eiskalt, trotzdem trug er keine dicke Winterjacke.",
+      "level": "B1",
+      "notesTr": "Pozisyon 1'dedir; fiil hemen bağlaçtan sonra gelir.",
+      "notesEn": "Position 1; verb comes right after the connector."
+    },
+    {
+      "id": "conn-sonst",
+      "name": "sonst",
+      "group": "position_1",
+      "groupTitleTr": "Pozisyon 1 (Fiil Hemen Sonra)",
+      "groupTitleEn": "Position 1 (Verb Immediately Next)",
+      "formula": "Imperativ/Aussage. Sonst + VERB + Subjekt + ...",
+      "meaningTr": "yoksa, aksi halde",
+      "meaningEn": "otherwise, or else",
+      "example": "Beeil dich bitte, sonst verpassen wir den letzten Zug!",
+      "level": "A2-B1",
+      "notesTr": "Pozisyon 1; fiil hemen sonra gelir.",
+      "notesEn": "Position 1; verb follows immediately."
+    },
+    {
+      "id": "conn-ausserdem",
+      "name": "außerdem",
+      "group": "position_1",
+      "groupTitleTr": "Pozisyon 1 (Fiil Hemen Sonra)",
+      "groupTitleEn": "Position 1 (Verb Immediately Next)",
+      "formula": "Hauptsatz. Außerdem + VERB + Subjekt + ...",
+      "meaningTr": "ayrıca, bundan başka",
+      "meaningEn": "furthermore, moreover",
+      "example": "Die Wohnung ist modern, außerdem liegt sie sehr zentral.",
+      "level": "B1",
+      "notesTr": "Ek bilgi ekler. Pozisyon 1.",
+      "notesEn": "Adds complementary info. Position 1."
+    },
+    {
+      "id": "conn-nicht-nur-sondern-auch",
+      "name": "nicht nur ... sondern auch",
+      "group": "zweiteilig",
+      "groupTitleTr": "İkili Bağlaçlar (Zweiteilig)",
+      "groupTitleEn": "Two-Part Connectors",
+      "formula": "nicht nur [X], sondern auch [Y]",
+      "meaningTr": "sadece ... değil, aynı zamanda ...",
+      "meaningEn": "not only ... but also",
+      "example": "Er spricht nicht nur fließend Deutsch, sondern auch Spanisch.",
+      "level": "B1-B2",
+      "notesTr": "İki olumlu durumu güçlendirerek bağlar.",
+      "notesEn": "Emphasizes two positive additive conditions."
+    },
+    {
+      "id": "conn-entweder-oder",
+      "name": "entweder ... oder",
+      "group": "zweiteilig",
+      "groupTitleTr": "İkili Bağlaçlar (Zweiteilig)",
+      "groupTitleEn": "Two-Part Connectors",
+      "formula": "Entweder [X] oder [Y]",
+      "meaningTr": "ya ... ya da",
+      "meaningEn": "either ... or",
+      "example": "Du musst dich entscheiden: Entweder du kommst mit oder du bleibst hier.",
+      "level": "A2-B1",
+      "notesTr": "Alternatif seçim sunar.",
+      "notesEn": "Presents alternative choices."
+    },
+    {
+      "id": "conn-sowohl-als-auch",
+      "name": "sowohl ... als auch",
+      "group": "zweiteilig",
+      "groupTitleTr": "İkili Bağlaçlar (Zweiteilig)",
+      "groupTitleEn": "Two-Part Connectors",
+      "formula": "sowohl [X] als auch [Y]",
+      "meaningTr": "hem ... hem de",
+      "meaningEn": "both ... and",
+      "example": "Sie mag sowohl das Theater als auch klassische Konzerte.",
+      "level": "B1",
+      "notesTr": "İki öğeyi eşdeğer kabul ederek bağlar.",
+      "notesEn": "Connects two elements equally."
+    },
+    {
+      "id": "conn-zwar-aber",
+      "name": "zwar ... aber",
+      "group": "zweiteilig",
+      "groupTitleTr": "İkili Bağlaçlar (Zweiteilig)",
+      "groupTitleEn": "Two-Part Connectors",
+      "formula": "zwar [X], aber [Y]",
+      "meaningTr": "gerçi ... ama",
+      "meaningEn": "indeed ... but",
+      "example": "Die Wohnung ist zwar relativ klein, aber sehr gemütlich.",
+      "level": "B1",
+      "notesTr": "İlk kısımdaki sınırlamayı ikinci kısımdaki olumlulukla dengeler.",
+      "notesEn": "Balances concession in part 1 with a contrast in part 2."
+    }
+  ],
+  "notes": [
+    {
+      "id": "01_verben_mit_praepositionen",
+      "title": "Verben mit Präpositionen (A2-B2)",
+      "level": "B1",
+      "category": "Grammatik & Wortschatz",
+      "updated": "2026-11-01",
+      "content": "\n# Verben mit festen Präpositionen\n\nIn der deutschen Sprache verlangen viele Verben feste Präpositionen mit entweder Dativ oder Akkusativ.\n\n## 1. Verben mit Akkusativ\n\n| Verb | Präposition | Kasus | Bedeutung (TR) | Meaning (EN) | Beispielsatz |\n|---|---|---|---|---|---|\n| warten | auf | Akk | birini/bir şeyi beklemek | to wait for | Ich warte auf den Bus an der Haltestelle. |\n| sich freuen | auf | Akk | gelecekteki bir şeye sevinmek | to look forward to | Wir freuen uns auf den kommenden Sommer. |\n| sich freuen | über | Akk | olmuş bir şeye sevinmek | to be happy about (past/present) | Er freut sich über das schöne Geschenk. |\n| denken | an | Akk | birini/bir şeyi düşünmek | to think of/about | Ich denke oft an meine Schulzeit. |\n| hoffen | auf | Akk | bir şeyi umut etmek | to hope for | Alle hoffen auf besseres Wetter am Wochenende. |\n| sich interessieren | für | Akk | bir şeyle ilgilenmek | to be interested in | Sie interessiert sich sehr für moderne Architektur. |\n| sich konzentrieren | auf | Akk | bir şeye odaklanmak | to concentrate on | Bitte konzentrieren Sie sich auf die Prüfung. |\n| sich erinnern | an | Akk | bir şeyi hatırlamak | to remember | Erinnerst du dich noch an unseren ersten Urlaub? |\n| sich bewerben | um | Akk | bir işe/bursa başvurmak | to apply for | Er bewirbt sich um eine Stelle als Ingenieur. |\n\n## 2. Verben mit Dativ\n\n| Verb | Präposition | Kasus | Bedeutung (TR) | Meaning (EN) | Beispielsatz |\n|---|---|---|---|---|---|\n| sprechen | mit | Dat | biriyle konuşmak | to speak with | Ich muss dringend mit dem Arzt sprechen. |\n| telefonieren | mit | Dat | biriyle telefonda görüşmek | to speak on phone with | Sie telefoniert gerade mit ihrer Mutter. |\n| teilnehmen | an | Dat | bir şeye katılmak | to participate in | Wer nimmt an dem Workshop teil? |\n| träumen | von | Dat | bir şeyin hayalini kurmak | to dream of | Er träumt von einem Leben am Meer. |\n| suchen | nach | Dat | bir şeyi aramak | to look for | Die Polizei sucht nach dem Zeugen. |\n| gratulieren | zu | Dat | bir şeyi tebrik etmek | to congratulate on | Wir gratulieren dir herzlich zum Geburtstag! |\n| gehören | zu | Dat | bir şeye/gruba ait olmak | to belong to | Das gehört nicht zu meinen Aufgaben. |\n| abhängen | von | Dat | bir şeye bağlı olmak | to depend on | Der Erfolg hängt von unserer Vorbereitung ab. |\n\n## 3. Verwandte Stammverben (Root Derivations)\n- **warten**: *abwarten* (bekleyip görmek), *erwarten* (ummak, beklemek).\n- **sprechen**: *besprechen* (müzakere etmek), *versprechen* (söz vermek), *absprechen* (kararlaştırmak).\n- **denken**: *nachdenken über* (üzerinde etraflıca düşünmek), *ausdenken* (uydurmak/tasarlamak).\n",
+      "rawFile": "01_verben_mit_praepositionen.md"
+    },
+    {
+      "id": "02_konnektoren_system",
+      "title": "Konnektoren-System: Hauptsatz, Nebensatz & Adverbiale",
+      "level": "B1",
+      "category": "Satzbau & Logik",
+      "updated": "2026-11-02",
+      "content": "\n# Deutsche Konnektoren Übersicht\n\nAlmanca bağlaçlar cümledeki fiilin konumuna göre 4 ana gruba ayrılır.\n\n## Gruppe 1: Position 0 (Koordinierende Konnektoren - ADUSO)\nBu bağlaçlar cümlenin sıfırıncı pozisyonundadır. Cümledeki özne ve fiil sırasını bozmaz:\n**Konnektor (0) + Subjekt (1) + Verb (2) + ...**\n\n- **aber** (ama, fakat / but): Ich wollte kommen, aber ich hatte leider keine Zeit.\n- **denn** (çünkü / because): Er lernt Deutsch, denn er möchte in Berlin arbeiten.\n- **und** (ve / and): Wir kochen zusammen und wir hören klassische Musik.\n- **sondern** (bilakis, aksine - olumsuzluktan sonra / but rather): Er trinkt keinen Kaffee, sondern er bevorzugt grünen Tee.\n- **oder** (veya, ya da / or): Gehen wir heute ins Kino oder bleiben wir zu Hause?\n\n## Gruppe 2: Subjunktionen (Nebensatz - Fiil Sonda)\nBu bağlaçlar yan cümle (Nebensatz) başlatır. Çekimli fiil cümlenin en sonuna gider:\n**Konnektor + Subjekt + ... + Verb am Satzende**\n\n- **weil** (çünkü, -dığı için / because): Ich gehe früh schlafen, weil ich morgen eine Prüfung habe.\n- **dass** (-ki, -diğini / that): Ich weiß, dass deutsche Grammatik präzise ist.\n- **obwohl** (-e rağmen / although): Er geht spazieren, obwohl es stark regnet.\n- **wenn** (eğer / zaman bildiren -ince / if, when): Wenn ich Zeit habe, lese ich gern deutsche Romane.\n- **da** (mademki, -dığı için / since, as): Da er krank ist, kann er heute nicht zur Arbeit kommen.\n- **während** (-iken / while): Während sie kocht, hört sie einen deutschen Podcast.\n- **damit** (-mesi için, amaç / so that): Er wiederholt die Vokabeln, damit er fließend sprechen kann.\n- **ob** (-ip -mediği / whether): Ich frage mich, ob das Museum heute geöffnet ist.\n\n## Gruppe 3: Konjunktionaladverbien (Position 1 - Fiil Hemen Sonra)\nBu bağlaçlar tek başlarına 1. pozisyondadır. Çekimli fiil hemen bağlaçtan sonra (2. pozisyonda) gelir:\n**Konnektor (Pos 1) + Verb (Pos 2) + Subjekt (Pos 3) + ...**\n\n- **deshalb** (bu yüzden / therefore): Es hat geregnet, deshalb bin ich zu Hause geblieben.\n- **trotzdem** (buna rağmen / nevertheless): Es war sehr kalt, trotzdem trug er keine Jacke.\n- **sonst** (yoksa, aksi takdirde / otherwise): Beeil dich, sonst verpassen wir den Zug!\n- **außerdem** (ayrıca / furthermore): Die Wohnung ist modern, außerdem liegt sie sehr zentral.\n- **daher / darum** (bu sebeple / that is why): Er hat fleißig geübt, darum hat er die B1-Prüfung bestanden.\n- **danach** (ondan sonra / afterwards): Wir aßen zu Abend, danach gingen wir spazieren.\n\n## Gruppe 4: Zweiteilige Konnektoren (İkili Bağlaçlar)\n- **nicht nur ... sondern auch** (sadece ... değil, aynı zamanda ... / not only ... but also): Er spricht nicht nur fließend Deutsch, sondern auch Spanisch.\n- **entweder ... oder** (ya ... ya da / either ... or): Du musst dich entscheiden: Entweder du kommst mit oder du bleibst hier.\n- **sowohl ... als auch** (hem ... hem de / both ... and): Sie mag sowohl Theater als auch klassische Konzerte.\n- **zwar ... aber** (gerçi ... ama / indeed ... but): Die Wohnung ist zwar klein, aber sehr gemütlich.\n- **weder ... noch** (ne ... ne de / neither ... nor): Er hat weder Zeit noch Geld für lange Reisen.\n",
+      "rawFile": "02_konnektoren_system.md"
+    },
+    {
+      "id": "03_alltag_und_b1_texte",
+      "title": "Alltag in Deutschland: Ein neuer Anfang",
+      "level": "B1",
+      "category": "Leseverstehen & Kontext",
+      "updated": "2026-11-03",
+      "content": "\n# Ein neuer Anfang in Berlin\n\nAls Kerem vor sechs Monaten nach Berlin zog, war vieles fremd und ungewohnt. Die Stadt war riesig, der Winter war grau und die Bürokratie schien wie ein endloses Labyrinth. Trotzdem verlor er nie den Mut.\n\nJeden Morgen stand er um sieben Uhr auf, trank einen starken schwarzen Kaffee und wiederholte seine deutschen Vokabeln. Er wusste genau, dass Sprache der wichtigste Schlüssel zur Integration ist. Wenn man eine neue Sprache lernt, braucht man Geduld und Beständigkeit.\n\nGestern hatte Kerem ein Vorstellungsgespräch bei einem innovativen Architekturbüro in Kreuzberg. Er hatte sich gründlich auf das Gespräch vorbereitet, denn die Stelle entsprach genau seinen beruflichen Zielen. Während des Interviews sprach er ruhig und präzise über seine bisherigen Erfahrungen. Der Projektleiter interessierte sich besonders für seine Entwürfe im Bereich nachhaltiges Bauen.\n\nObwohl Kerem am Anfang etwas nervös war, verlief das Treffen sehr positiv. Am Ende des Gesprächs gratulierte ihm der Chef zu seiner gelungenen Präsentation und bot ihm ein zweimonatiges Praktikum an. Er freut sich nun sehr auf diese neue Herausforderung.\n\nAm Abend rief er seine Familie an und erzählte ihnen die gute Nachricht: \"Ich habe nicht nur den Mut nicht verloren, sondern auch meinen Traumjob gefunden!\"\n",
+      "rawFile": "03_alltag_und_b1_texte.md"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-1",
+      "type": "cloze",
+      "category": "Verben mit Präpositionen",
+      "level": "B1",
+      "promptTr": "Cümledeki boşlukları doğru edat ve artikelle doldurun.",
+      "promptEn": "Fill in the blanks with the correct preposition and article.",
+      "sentenceParts": [
+        "Ich warte seit einer halben Stunde ",
+        " ",
+        " Bus."
+      ],
+      "options": [
+        "auf den",
+        "an dem",
+        "für das",
+        "auf dem"
+      ],
+      "correctAnswer": "auf den",
+      "explanationTr": "'warten auf' Akkusativ alır. 'der Bus' -> 'den Bus'.",
+      "explanationEn": "'warten auf' takes the Akkusativ case. 'der Bus' becomes 'den Bus'."
+    },
+    {
+      "id": "ex-2",
+      "type": "cloze",
+      "category": "Konnektoren",
+      "level": "B1",
+      "promptTr": "Doğru bağlacı seçin (Cümle yapısına dikkat edin).",
+      "promptEn": "Choose the correct connector (Pay attention to the sentence structure).",
+      "sentenceParts": [
+        "Er bleibt heute zu Hause, ",
+        " er eine schwere Erkältung hat."
+      ],
+      "options": [
+        "weil",
+        "denn",
+        "deshalb",
+        "trotzdem"
+      ],
+      "correctAnswer": "weil",
+      "explanationTr": "Fiil sonda ('hat'), bu yüzden bir Nebensatz bağlacı olan 'weil' gereklidir. 'denn' olsaydı fiil 2. pozisyonda olurdu.",
+      "explanationEn": "The verb is at the end ('hat'), requiring the subordinate conjunction 'weil'. 'denn' would keep the verb in position 2."
+    },
+    {
+      "id": "ex-3",
+      "type": "cloze",
+      "category": "Konnektoren",
+      "level": "B1",
+      "promptTr": "Pozisyon 1 kuralına uygun bağlacı seçin.",
+      "promptEn": "Select the connector fitting the Position 1 rule.",
+      "sentenceParts": [
+        "Es regnet in Strömen, ",
+        " geht sie ohne Regenschirm spazieren."
+      ],
+      "options": [
+        "trotzdem",
+        "obwohl",
+        "aber",
+        "weil"
+      ],
+      "correctAnswer": "trotzdem",
+      "explanationTr": "Fiil hemen bağlaçtan sonra geliyor ('geht sie' - Pos 2). Dolayısıyla Konjunktionaladverb olan 'trotzdem' doğrudur.",
+      "explanationEn": "The verb immediately follows the connector ('geht sie' - Pos 2). Thus, the adverbial connector 'trotzdem' is correct."
+    },
+    {
+      "id": "ex-4",
+      "type": "cloze",
+      "category": "Verben mit Präpositionen",
+      "level": "B1",
+      "promptTr": "'sich freuen' fiilinin doğru edatını seçin.",
+      "promptEn": "Select the right preposition for 'sich freuen' in this context.",
+      "sentenceParts": [
+        "Wir freuen uns alle sehr ",
+        " den geplanten Urlaub im Juli."
+      ],
+      "options": [
+        "auf",
+        "über",
+        "an",
+        "von"
+      ],
+      "correctAnswer": "auf",
+      "explanationTr": "Gelecekteki bir olay için 'sich freuen auf + Akk' kullanılır.",
+      "explanationEn": "For future events or anticipation, 'sich freuen auf + Akk' is used."
+    },
+    {
+      "id": "ex-5",
+      "type": "sentence_builder",
+      "category": "Satzbau (Nebensatz)",
+      "level": "B1",
+      "promptTr": "Kelimeleri doğru Nebensatz (fiil sonda) sırasına dizin.",
+      "promptEn": "Arrange the words into the correct subordinate clause (verb at end) order.",
+      "words": [
+        "weil",
+        "er",
+        "morgen",
+        "eine",
+        "Prüfung",
+        "hat"
+      ],
+      "correctOrder": [
+        "weil",
+        "er",
+        "morgen",
+        "eine",
+        "Prüfung",
+        "hat"
+      ],
+      "targetMeaningTr": "...çünkü yarın bir sınavı var.",
+      "targetMeaningEn": "...because he has an exam tomorrow.",
+      "explanationTr": "Nebensatz kuralı: Bağlaç (weil) + Özne (er) + Zaman/Nesne (morgen eine Prüfung) + Çekimli Fiil sonda (hat).",
+      "explanationEn": "Subordinate clause rule: Conjunction (weil) + Subject (er) + Time/Object + Conjugated verb at the very end (hat)."
+    },
+    {
+      "id": "ex-6",
+      "type": "sentence_builder",
+      "category": "Satzbau (Adverbial - Pos 1)",
+      "level": "B1",
+      "promptTr": "Kelimeleri doğru Konjunktionaladverb (fiil 2. pozisyonda) sırasına dizin.",
+      "promptEn": "Arrange the words following the Adverbial connector (verb second) rule.",
+      "words": [
+        "deshalb",
+        "bleibe",
+        "ich",
+        "heute",
+        "zu",
+        "Hause"
+      ],
+      "correctOrder": [
+        "deshalb",
+        "bleibe",
+        "ich",
+        "heute",
+        "zu",
+        "Hause"
+      ],
+      "targetMeaningTr": "Bu yüzden bugün evde kalıyorum.",
+      "targetMeaningEn": "Therefore I am staying home today.",
+      "explanationTr": "'deshalb' 1. pozisyondadır, fiil 'bleibe' hemen 2. pozisyona gelir, özne 'ich' 3. pozisyona geçer.",
+      "explanationEn": "'deshalb' occupies position 1, verb 'bleibe' immediately takes position 2, subject 'ich' takes position 3."
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "case-akk",
+        "label": "Akkusativ (Wen? Was?)",
+        "type": "case",
+        "category": "Grammatik",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "case-dat",
+        "label": "Dativ (Wem? Wo?)",
+        "type": "case",
+        "category": "Grammatik",
+        "color": "#8b5cf6"
+      },
+      {
+        "id": "prep-auf",
+        "label": "auf",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-ueber",
+        "label": "über",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-an",
+        "label": "an",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-fuer",
+        "label": "für",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-um",
+        "label": "um",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-mit",
+        "label": "mit",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-von",
+        "label": "von",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-zu",
+        "label": "zu",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "prep-nach",
+        "label": "nach",
+        "type": "preposition",
+        "category": "Präposition",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "verb-warten",
+        "label": "warten",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "birini/bir şeyi beklemek",
+        "meaningEn": "to wait for",
+        "example": "Ich warte auf den Bus an der Haltestelle.",
+        "prep": "auf",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-sich-freuen",
+        "label": "sich freuen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "olmuş bir şeye sevinmek",
+        "meaningEn": "to be happy about (past/present)",
+        "example": "Er freut sich über das schöne Geschenk.",
+        "prep": "über",
+        "kasus": "Akk"
+      },
+      {
+        "id": "prep-über",
+        "label": "über",
+        "type": "preposition"
+      },
+      {
+        "id": "verb-denken",
+        "label": "denken",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "birini/bir şeyi düşünmek",
+        "meaningEn": "to think of/about",
+        "example": "Ich denke oft an meine Schulzeit.",
+        "prep": "an",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-hoffen",
+        "label": "hoffen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyi umut etmek",
+        "meaningEn": "to hope for",
+        "example": "Alle hoffen auf besseres Wetter am Wochenende.",
+        "prep": "auf",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-sich-interessieren",
+        "label": "sich interessieren",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyle ilgilenmek",
+        "meaningEn": "to be interested in",
+        "example": "Sie interessiert sich sehr für moderne Architektur.",
+        "prep": "für",
+        "kasus": "Akk"
+      },
+      {
+        "id": "prep-für",
+        "label": "für",
+        "type": "preposition"
+      },
+      {
+        "id": "verb-sich-konzentrieren",
+        "label": "sich konzentrieren",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeye odaklanmak",
+        "meaningEn": "to concentrate on",
+        "example": "Bitte konzentrieren Sie sich auf die Prüfung.",
+        "prep": "auf",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-sich-erinnern",
+        "label": "sich erinnern",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyi hatırlamak",
+        "meaningEn": "to remember",
+        "example": "Erinnerst du dich noch an unseren ersten Urlaub?",
+        "prep": "an",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-sich-bewerben",
+        "label": "sich bewerben",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir işe/bursa başvurmak",
+        "meaningEn": "to apply for",
+        "example": "Er bewirbt sich um eine Stelle als Ingenieur.",
+        "prep": "um",
+        "kasus": "Akk"
+      },
+      {
+        "id": "verb-sprechen",
+        "label": "sprechen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "biriyle konuşmak",
+        "meaningEn": "to speak with",
+        "example": "Ich muss dringend mit dem Arzt sprechen.",
+        "prep": "mit",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-telefonieren",
+        "label": "telefonieren",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "biriyle telefonda görüşmek",
+        "meaningEn": "to speak on phone with",
+        "example": "Sie telefoniert gerade mit ihrer Mutter.",
+        "prep": "mit",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-teilnehmen",
+        "label": "teilnehmen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeye katılmak",
+        "meaningEn": "to participate in",
+        "example": "Wer nimmt an dem Workshop teil?",
+        "prep": "an",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-träumen",
+        "label": "träumen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyin hayalini kurmak",
+        "meaningEn": "to dream of",
+        "example": "Er träumt von einem Leben am Meer.",
+        "prep": "von",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-suchen",
+        "label": "suchen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyi aramak",
+        "meaningEn": "to look for",
+        "example": "Die Polizei sucht nach dem Zeugen.",
+        "prep": "nach",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-gratulieren",
+        "label": "gratulieren",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeyi tebrik etmek",
+        "meaningEn": "to congratulate on",
+        "example": "Wir gratulieren dir herzlich zum Geburtstag!",
+        "prep": "zu",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-gehören",
+        "label": "gehören",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeye/gruba ait olmak",
+        "meaningEn": "to belong to",
+        "example": "Das gehört nicht zu meinen Aufgaben.",
+        "prep": "zu",
+        "kasus": "Dat"
+      },
+      {
+        "id": "verb-abhängen",
+        "label": "abhängen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bir şeye bağlı olmak",
+        "meaningEn": "to depend on",
+        "example": "Der Erfolg hängt von unserer Vorbereitung ab.",
+        "prep": "von",
+        "kasus": "Dat"
+      },
+      {
+        "id": "conn-aber",
+        "label": "aber",
+        "type": "connector",
+        "category": "Pozisyon 0 (ADUSO)",
+        "level": "A1-B1",
+        "meaningTr": "ama, fakat",
+        "meaningEn": "but, however",
+        "formula": "Hauptsatz + aber + Subjekt + Verb + ...",
+        "example": "Ich wollte kommen, aber ich hatte leider keine Zeit."
+      },
+      {
+        "id": "conn-denn",
+        "label": "denn",
+        "type": "connector",
+        "category": "Pozisyon 0 (ADUSO)",
+        "level": "A2-B1",
+        "meaningTr": "çünkü",
+        "meaningEn": "because, for",
+        "formula": "Hauptsatz + denn + Subjekt + Verb + ...",
+        "example": "Er lernt Deutsch, denn er möchte in Berlin arbeiten."
+      },
+      {
+        "id": "conn-und",
+        "label": "und",
+        "type": "connector",
+        "category": "Pozisyon 0 (ADUSO)",
+        "level": "A1",
+        "meaningTr": "ve",
+        "meaningEn": "and",
+        "formula": "Hauptsatz + und + Subjekt + Verb + ...",
+        "example": "Wir kochen zusammen und wir hören klassische Musik."
+      },
+      {
+        "id": "conn-sondern",
+        "label": "sondern",
+        "type": "connector",
+        "category": "Pozisyon 0 (ADUSO)",
+        "level": "A2-B1",
+        "meaningTr": "bilakis, aksine",
+        "meaningEn": "but rather, on the contrary",
+        "formula": "nicht/kein... + , sondern + Subjekt + Verb + ...",
+        "example": "Er trinkt keinen Kaffee, sondern er bevorzugt grünen Tee."
+      },
+      {
+        "id": "conn-oder",
+        "label": "oder",
+        "type": "connector",
+        "category": "Pozisyon 0 (ADUSO)",
+        "level": "A1",
+        "meaningTr": "veya, ya da",
+        "meaningEn": "or",
+        "formula": "Hauptsatz + oder + Subjekt + Verb + ...",
+        "example": "Gehen wir heute ins Kino oder bleiben wir zu Hause?"
+      },
+      {
+        "id": "conn-weil",
+        "label": "weil",
+        "type": "connector",
+        "category": "Nebensatz (Fiil Sonda)",
+        "level": "A2-B1",
+        "meaningTr": "çünkü, -dığı için",
+        "meaningEn": "because, since",
+        "formula": "..., weil + Subjekt + ... + VERB (Ende)",
+        "example": "Ich gehe früh schlafen, weil ich morgen eine wichtige Prüfung habe."
+      },
+      {
+        "id": "conn-dass",
+        "label": "dass",
+        "type": "connector",
+        "category": "Nebensatz (Fiil Sonda)",
+        "level": "A2-B1",
+        "meaningTr": "-ki, -diğini",
+        "meaningEn": "that",
+        "formula": "..., dass + Subjekt + ... + VERB (Ende)",
+        "example": "Ich weiß, dass die deutsche Grammatik sehr präzise ist."
+      },
+      {
+        "id": "conn-obwohl",
+        "label": "obwohl",
+        "type": "connector",
+        "category": "Nebensatz (Fiil Sonda)",
+        "level": "B1",
+        "meaningTr": "-e rağmen, karşın",
+        "meaningEn": "although, even though",
+        "formula": "..., obwohl + Subjekt + ... + VERB (Ende)",
+        "example": "Er geht spazieren, obwohl es draußen in Strömen regnet."
+      },
+      {
+        "id": "conn-wenn",
+        "label": "wenn",
+        "type": "connector",
+        "category": "Nebensatz (Fiil Sonda)",
+        "level": "A2-B1",
+        "meaningTr": "eğer, zaman bildiren -ince/-dığında",
+        "meaningEn": "if, whenever, when",
+        "formula": "Wenn + Subjekt + ... + Verb, [Verb + Subjekt...]",
+        "example": "Wenn ich freie Zeit habe, lese ich gern deutsche Romane."
+      },
+      {
+        "id": "conn-damit",
+        "label": "damit",
+        "type": "connector",
+        "category": "Nebensatz (Fiil Sonda)",
+        "level": "B1",
+        "meaningTr": "-sin diye, -mesi amacıyla",
+        "meaningEn": "so that, in order that",
+        "formula": "..., damit + Subjekt + ... + VERB (Ende)",
+        "example": "Er wiederholt täglich Vokabeln, damit er fließend Deutsch sprechen kann."
+      },
+      {
+        "id": "conn-deshalb",
+        "label": "deshalb / darum / daher",
+        "type": "connector",
+        "category": "Pozisyon 1 (Fiil Hemen Sonra)",
+        "level": "A2-B1",
+        "meaningTr": "bu yüzden, bu nedenle",
+        "meaningEn": "therefore, that's why",
+        "formula": "Hauptsatz. Deshalb + VERB + Subjekt + ...",
+        "example": "Es hat stark geregnet, deshalb bin ich zu Hause geblieben."
+      },
+      {
+        "id": "conn-trotzdem",
+        "label": "trotzdem",
+        "type": "connector",
+        "category": "Pozisyon 1 (Fiil Hemen Sonra)",
+        "level": "B1",
+        "meaningTr": "buna rağmen, yine de",
+        "meaningEn": "nevertheless, anyway",
+        "formula": "Hauptsatz. Trotzdem + VERB + Subjekt + ...",
+        "example": "Es war eiskalt, trotzdem trug er keine dicke Winterjacke."
+      },
+      {
+        "id": "conn-sonst",
+        "label": "sonst",
+        "type": "connector",
+        "category": "Pozisyon 1 (Fiil Hemen Sonra)",
+        "level": "A2-B1",
+        "meaningTr": "yoksa, aksi halde",
+        "meaningEn": "otherwise, or else",
+        "formula": "Imperativ/Aussage. Sonst + VERB + Subjekt + ...",
+        "example": "Beeil dich bitte, sonst verpassen wir den letzten Zug!"
+      },
+      {
+        "id": "conn-ausserdem",
+        "label": "außerdem",
+        "type": "connector",
+        "category": "Pozisyon 1 (Fiil Hemen Sonra)",
+        "level": "B1",
+        "meaningTr": "ayrıca, bundan başka",
+        "meaningEn": "furthermore, moreover",
+        "formula": "Hauptsatz. Außerdem + VERB + Subjekt + ...",
+        "example": "Die Wohnung ist modern, außerdem liegt sie sehr zentral."
+      },
+      {
+        "id": "conn-nicht-nur-sondern-auch",
+        "label": "nicht nur ... sondern auch",
+        "type": "connector",
+        "category": "İkili Bağlaçlar (Zweiteilig)",
+        "level": "B1-B2",
+        "meaningTr": "sadece ... değil, aynı zamanda ...",
+        "meaningEn": "not only ... but also",
+        "formula": "nicht nur [X], sondern auch [Y]",
+        "example": "Er spricht nicht nur fließend Deutsch, sondern auch Spanisch."
+      },
+      {
+        "id": "conn-entweder-oder",
+        "label": "entweder ... oder",
+        "type": "connector",
+        "category": "İkili Bağlaçlar (Zweiteilig)",
+        "level": "A2-B1",
+        "meaningTr": "ya ... ya da",
+        "meaningEn": "either ... or",
+        "formula": "Entweder [X] oder [Y]",
+        "example": "Du musst dich entscheiden: Entweder du kommst mit oder du bleibst hier."
+      },
+      {
+        "id": "conn-sowohl-als-auch",
+        "label": "sowohl ... als auch",
+        "type": "connector",
+        "category": "İkili Bağlaçlar (Zweiteilig)",
+        "level": "B1",
+        "meaningTr": "hem ... hem de",
+        "meaningEn": "both ... and",
+        "formula": "sowohl [X] als auch [Y]",
+        "example": "Sie mag sowohl das Theater als auch klassische Konzerte."
+      },
+      {
+        "id": "conn-zwar-aber",
+        "label": "zwar ... aber",
+        "type": "connector",
+        "category": "İkili Bağlaçlar (Zweiteilig)",
+        "level": "B1",
+        "meaningTr": "gerçi ... ama",
+        "meaningEn": "indeed ... but",
+        "formula": "zwar [X], aber [Y]",
+        "example": "Die Wohnung ist zwar relativ klein, aber sehr gemütlich."
+      },
+      {
+        "id": "noun-bewerbung",
+        "label": "die Bewerbung",
+        "type": "noun",
+        "article": "die",
+        "meaningTr": "başvuru",
+        "meaningEn": "application"
+      },
+      {
+        "id": "noun-vorstellungsgespräch",
+        "label": "das Vorstellungsgespräch",
+        "type": "noun",
+        "article": "das",
+        "meaningTr": "iş mülakatı",
+        "meaningEn": "job interview"
+      },
+      {
+        "id": "noun-arbeitgeber",
+        "label": "der Arbeitgeber",
+        "type": "noun",
+        "article": "der",
+        "meaningTr": "işveren",
+        "meaningEn": "employer"
+      },
+      {
+        "id": "noun-herausforderung",
+        "label": "die Herausforderung",
+        "type": "noun",
+        "article": "die",
+        "meaningTr": "meydan okuma, zorluk",
+        "meaningEn": "challenge"
+      },
+      {
+        "id": "noun-beständigkeit",
+        "label": "die Beständigkeit",
+        "type": "noun",
+        "article": "die",
+        "meaningTr": "istikrar, süreklilik",
+        "meaningEn": "consistency"
+      },
+      {
+        "id": "noun-labyrinth",
+        "label": "das Labyrinth",
+        "type": "noun",
+        "article": "das",
+        "meaningTr": "labirent",
+        "meaningEn": "maze"
+      },
+      {
+        "id": "noun-projektleiter",
+        "label": "der Projektleiter",
+        "type": "noun",
+        "article": "der",
+        "meaningTr": "proje yöneticisi",
+        "meaningEn": "project manager"
+      },
+      {
+        "id": "verb-die-beständigkeit",
+        "label": "die Beständigkeit",
+        "type": "verb",
+        "meaningTr": "istikrar, süreklilik",
+        "meaningEn": "consistency",
+        "example": ""
+      },
+      {
+        "id": "verb-vorbereiten",
+        "label": "vorbereiten",
+        "type": "verb",
+        "meaningTr": "bir şeye hazırlanmak",
+        "meaningEn": "to prepare for",
+        "example": "Er bereitet sich auf das Vorstellungsgespräch vor."
+      },
+      {
+        "id": "verb-entsprechen",
+        "label": "entsprechen",
+        "type": "verb",
+        "meaningTr": "uygun düşmek, denk gelmek",
+        "meaningEn": "to correspond to",
+        "example": "Das Gehalt entspricht seinen Erwartungen."
+      },
+      {
+        "id": "verb-anbieten",
+        "label": "anbieten",
+        "type": "verb",
+        "meaningTr": "teklif etmek",
+        "meaningEn": "to offer",
+        "example": "Der Chef bietet ihm eine Stelle an."
+      },
+      {
+        "id": "verb-verlaufen",
+        "label": "verlaufen",
+        "type": "verb",
+        "meaningTr": "geçmek, seyretmek",
+        "meaningEn": "to proceed",
+        "example": "Das Treffen verlief positiv."
+      },
+      {
+        "id": "verb-erwarten",
+        "label": "erwarten",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "ummak, beklemek",
+        "meaningEn": "to expect",
+        "category": "Stammverb-Ableitung"
+      },
+      {
+        "id": "verb-abwarten",
+        "label": "abwarten",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "bekleyip görmek",
+        "meaningEn": "to wait and see",
+        "category": "Stammverb-Ableitung"
+      },
+      {
+        "id": "verb-besprechen",
+        "label": "besprechen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "müzakere etmek",
+        "meaningEn": "to discuss",
+        "category": "Stammverb-Ableitung"
+      },
+      {
+        "id": "verb-versprechen",
+        "label": "versprechen",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "söz vermek",
+        "meaningEn": "to promise",
+        "category": "Stammverb-Ableitung"
+      },
+      {
+        "id": "verb-nachdenken",
+        "label": "nachdenken",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "üzerinde düşünmek",
+        "meaningEn": "to reflect",
+        "category": "Stammverb-Ableitung"
+      },
+      {
+        "id": "verb-ausdenken",
+        "label": "ausdenken",
+        "type": "verb",
+        "level": "B1",
+        "meaningTr": "uydurmak",
+        "meaningEn": "to invent",
+        "category": "Stammverb-Ableitung"
+      }
+    ],
+    "edges": [
+      {
+        "id": "verb-warten->prep-auf:takes_preposition",
+        "source": "verb-warten",
+        "target": "prep-auf",
+        "relation": "takes_preposition",
+        "label": "+ auf"
+      },
+      {
+        "id": "prep-auf->case-akk:governs_case",
+        "source": "prep-auf",
+        "target": "case-akk",
+        "relation": "governs_case",
+        "label": "+ Akk"
+      },
+      {
+        "id": "verb-sich-freuen->prep-auf:takes_preposition",
+        "source": "verb-sich-freuen",
+        "target": "prep-auf",
+        "relation": "takes_preposition",
+        "label": "+ auf"
+      },
+      {
+        "id": "verb-sich-freuen->prep-über:takes_preposition",
+        "source": "verb-sich-freuen",
+        "target": "prep-über",
+        "relation": "takes_preposition",
+        "label": "+ über"
+      },
+      {
+        "id": "prep-über->case-akk:governs_case",
+        "source": "prep-über",
+        "target": "case-akk",
+        "relation": "governs_case",
+        "label": "+ Akk"
+      },
+      {
+        "id": "verb-denken->prep-an:takes_preposition",
+        "source": "verb-denken",
+        "target": "prep-an",
+        "relation": "takes_preposition",
+        "label": "+ an"
+      },
+      {
+        "id": "prep-an->case-akk:governs_case",
+        "source": "prep-an",
+        "target": "case-akk",
+        "relation": "governs_case",
+        "label": "+ Akk"
+      },
+      {
+        "id": "verb-hoffen->prep-auf:takes_preposition",
+        "source": "verb-hoffen",
+        "target": "prep-auf",
+        "relation": "takes_preposition",
+        "label": "+ auf"
+      },
+      {
+        "id": "verb-sich-interessieren->prep-für:takes_preposition",
+        "source": "verb-sich-interessieren",
+        "target": "prep-für",
+        "relation": "takes_preposition",
+        "label": "+ für"
+      },
+      {
+        "id": "prep-für->case-akk:governs_case",
+        "source": "prep-für",
+        "target": "case-akk",
+        "relation": "governs_case",
+        "label": "+ Akk"
+      },
+      {
+        "id": "verb-sich-konzentrieren->prep-auf:takes_preposition",
+        "source": "verb-sich-konzentrieren",
+        "target": "prep-auf",
+        "relation": "takes_preposition",
+        "label": "+ auf"
+      },
+      {
+        "id": "verb-sich-erinnern->prep-an:takes_preposition",
+        "source": "verb-sich-erinnern",
+        "target": "prep-an",
+        "relation": "takes_preposition",
+        "label": "+ an"
+      },
+      {
+        "id": "verb-sich-bewerben->prep-um:takes_preposition",
+        "source": "verb-sich-bewerben",
+        "target": "prep-um",
+        "relation": "takes_preposition",
+        "label": "+ um"
+      },
+      {
+        "id": "prep-um->case-akk:governs_case",
+        "source": "prep-um",
+        "target": "case-akk",
+        "relation": "governs_case",
+        "label": "+ Akk"
+      },
+      {
+        "id": "verb-sprechen->prep-mit:takes_preposition",
+        "source": "verb-sprechen",
+        "target": "prep-mit",
+        "relation": "takes_preposition",
+        "label": "+ mit"
+      },
+      {
+        "id": "prep-mit->case-dat:governs_case",
+        "source": "prep-mit",
+        "target": "case-dat",
+        "relation": "governs_case",
+        "label": "+ Dat"
+      },
+      {
+        "id": "verb-telefonieren->prep-mit:takes_preposition",
+        "source": "verb-telefonieren",
+        "target": "prep-mit",
+        "relation": "takes_preposition",
+        "label": "+ mit"
+      },
+      {
+        "id": "verb-teilnehmen->prep-an:takes_preposition",
+        "source": "verb-teilnehmen",
+        "target": "prep-an",
+        "relation": "takes_preposition",
+        "label": "+ an"
+      },
+      {
+        "id": "prep-an->case-dat:governs_case",
+        "source": "prep-an",
+        "target": "case-dat",
+        "relation": "governs_case",
+        "label": "+ Dat"
+      },
+      {
+        "id": "verb-träumen->prep-von:takes_preposition",
+        "source": "verb-träumen",
+        "target": "prep-von",
+        "relation": "takes_preposition",
+        "label": "+ von"
+      },
+      {
+        "id": "prep-von->case-dat:governs_case",
+        "source": "prep-von",
+        "target": "case-dat",
+        "relation": "governs_case",
+        "label": "+ Dat"
+      },
+      {
+        "id": "verb-suchen->prep-nach:takes_preposition",
+        "source": "verb-suchen",
+        "target": "prep-nach",
+        "relation": "takes_preposition",
+        "label": "+ nach"
+      },
+      {
+        "id": "prep-nach->case-dat:governs_case",
+        "source": "prep-nach",
+        "target": "case-dat",
+        "relation": "governs_case",
+        "label": "+ Dat"
+      },
+      {
+        "id": "verb-gratulieren->prep-zu:takes_preposition",
+        "source": "verb-gratulieren",
+        "target": "prep-zu",
+        "relation": "takes_preposition",
+        "label": "+ zu"
+      },
+      {
+        "id": "prep-zu->case-dat:governs_case",
+        "source": "prep-zu",
+        "target": "case-dat",
+        "relation": "governs_case",
+        "label": "+ Dat"
+      },
+      {
+        "id": "verb-gehören->prep-zu:takes_preposition",
+        "source": "verb-gehören",
+        "target": "prep-zu",
+        "relation": "takes_preposition",
+        "label": "+ zu"
+      },
+      {
+        "id": "verb-abhängen->prep-von:takes_preposition",
+        "source": "verb-abhängen",
+        "target": "prep-von",
+        "relation": "takes_preposition",
+        "label": "+ von"
+      },
+      {
+        "id": "verb-warten->verb-erwarten:root_derivation",
+        "source": "verb-warten",
+        "target": "verb-erwarten",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      },
+      {
+        "id": "verb-warten->verb-abwarten:root_derivation",
+        "source": "verb-warten",
+        "target": "verb-abwarten",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      },
+      {
+        "id": "verb-sprechen->verb-besprechen:root_derivation",
+        "source": "verb-sprechen",
+        "target": "verb-besprechen",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      },
+      {
+        "id": "verb-sprechen->verb-versprechen:root_derivation",
+        "source": "verb-sprechen",
+        "target": "verb-versprechen",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      },
+      {
+        "id": "verb-denken->verb-nachdenken:root_derivation",
+        "source": "verb-denken",
+        "target": "verb-nachdenken",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      },
+      {
+        "id": "verb-denken->verb-ausdenken:root_derivation",
+        "source": "verb-denken",
+        "target": "verb-ausdenken",
+        "relation": "root_derivation",
+        "label": "Kök türevi"
+      }
+    ]
+  }
+}
