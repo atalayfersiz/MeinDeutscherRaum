@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import initialData from "@/data/generated/db.json";
 import { AppDatabase } from "@/types";
 import { Header, ActiveTab } from "@/components/Header";
-import { KnowledgeGraph } from "@/components/KnowledgeGraph";
 import { KonnektorenHub } from "@/components/KonnektorenHub";
 import { KasusHub } from "@/components/KasusHub";
 import { SmartVocabulary } from "@/components/SmartVocabulary";
@@ -15,7 +14,7 @@ import { useLanguage } from "@/lib/language-context";
 export default function Home() {
   const { lang, t } = useLanguage();
   const [data, setData] = useState<AppDatabase>(initialData as AppDatabase);
-  const [activeTab, setActiveTab] = useState<ActiveTab>("graph");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("connectors");
   const [isSyncing, setIsSyncing] = useState(false);
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false);
 
@@ -65,15 +64,6 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full pb-16">
-        {activeTab === "graph" && (
-          <div className="w-full">
-            <KnowledgeGraph
-              nodes={data.graph.nodes}
-              edges={data.graph.edges}
-            />
-          </div>
-        )}
-
         {activeTab === "connectors" && (
           <KonnektorenHub
             connectors={data.connectors}

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { 
-  Network, 
   GitBranch, 
   Layers, 
   BookOpen, 
@@ -16,7 +15,7 @@ import {
   Scale
 } from "lucide-react";
 
-export type ActiveTab = "graph" | "connectors" | "kasus" | "vocab" | "reader";
+export type ActiveTab = "connectors" | "kasus" | "vocab" | "reader";
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -48,12 +47,6 @@ export function Header({
   };
 
   const navItems: { id: ActiveTab; labelTr: string; labelEn: string; icon: React.ReactNode }[] = [
-    {
-      id: "graph",
-      labelTr: "Zihin Haritası",
-      labelEn: "Knowledge Graph",
-      icon: <Network className="w-4 h-4" />
-    },
     {
       id: "connectors",
       labelTr: "Bağlaçlar Matrisi",
