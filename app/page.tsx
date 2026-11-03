@@ -6,6 +6,7 @@ import { AppDatabase } from "@/types";
 import { Header, ActiveTab } from "@/components/Header";
 import { KnowledgeGraph } from "@/components/KnowledgeGraph";
 import { KonnektorenHub } from "@/components/KonnektorenHub";
+import { KasusHub } from "@/components/KasusHub";
 import { SmartVocabulary } from "@/components/SmartVocabulary";
 import { FocusReaderAndPractice } from "@/components/FocusReaderAndPractice";
 import { SyncModal } from "@/components/SyncModal";
@@ -77,6 +78,10 @@ export default function Home() {
           <KonnektorenHub
             connectors={data.connectors}
           />
+        )}
+
+        {activeTab === "kasus" && (
+          <KasusHub />
         )}
 
         {activeTab === "vocab" && (

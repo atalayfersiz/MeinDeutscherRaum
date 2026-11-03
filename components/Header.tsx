@@ -12,10 +12,11 @@ import {
   Moon, 
   Sparkles,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Scale
 } from "lucide-react";
 
-export type ActiveTab = "graph" | "connectors" | "vocab" | "reader";
+export type ActiveTab = "graph" | "connectors" | "kasus" | "vocab" | "reader";
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -58,6 +59,12 @@ export function Header({
       labelTr: "Bağlaçlar Matrisi",
       labelEn: "Connectors Hub",
       icon: <GitBranch className="w-4 h-4" />
+    },
+    {
+      id: "kasus",
+      labelTr: "Dativ & Akkusativ",
+      labelEn: "Dativ & Akkusativ",
+      icon: <Scale className="w-4 h-4" />
     },
     {
       id: "vocab",
