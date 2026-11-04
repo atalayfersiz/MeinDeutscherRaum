@@ -10,18 +10,22 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  lang: "tr",
+  lang: "en",
   setLang: () => {},
-  t: (tr, en) => tr,
+  t: (tr, en) => en,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Language>("tr");
+  // Default to English ('en') as requested
+  const [lang, setLangState] = useState<Language>("en");
 
   useEffect(() => {
     const saved = localStorage.getItem("mdr_lang") as Language;
     if (saved === "tr" || saved === "en") {
       setLangState(saved);
+    } else {
+      setLangState("en");
+      localStorage.setItem("mdr_lang", "en");
     }
   }, []);
 
@@ -30,7 +34,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("mdr_lang", newLang);
   };
 
-  const t = (tr: string, en: string) => (lang === "tr" ? tr : en);
+  // When lang is "en", return en; when "tr", return tr
+  const t = (tr: string, en: string) => (lang === "en" ? en : tr);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>

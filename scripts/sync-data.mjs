@@ -11,7 +11,6 @@ const PUBLIC_DATA_DIR = path.resolve("./public/data");
 
 console.log("⚡ Starting MeinDeutscherRaum data sync & parser...");
 
-// Ensure output directories
 if (!fs.existsSync(GENERATED_DIR)) fs.mkdirSync(GENERATED_DIR, { recursive: true });
 if (!fs.existsSync(PUBLIC_DATA_DIR)) fs.mkdirSync(PUBLIC_DATA_DIR, { recursive: true });
 
@@ -28,9 +27,7 @@ function addGraphNode(node) {
     nodeMap.set(node.id, node);
     graphNodes.push(node);
   } else {
-    // merge properties
-    const existing = nodeMap.get(node.id);
-    Object.assign(existing, node);
+    Object.assign(nodeMap.get(node.id), node);
   }
 }
 
@@ -41,20 +38,7 @@ function addGraphEdge(edge) {
   }
 }
 
-// 1. Base grammar nodes
-addGraphNode({ id: "case-akk", label: "Akkusativ (Wen? Was?)", type: "case", category: "Grammatik", color: "#3b82f6" });
-addGraphNode({ id: "case-dat", label: "Dativ (Wem? Wo?)", type: "case", category: "Grammatik", color: "#8b5cf6" });
-addGraphNode({ id: "prep-auf", label: "auf", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-ueber", label: "über", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-an", label: "an", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-fuer", label: "für", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-um", label: "um", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-mit", label: "mit", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-von", label: "von", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-zu", label: "zu", type: "preposition", category: "Präposition", color: "#f59e0b" });
-addGraphNode({ id: "prep-nach", label: "nach", type: "preposition", category: "Präposition", color: "#f59e0b" });
-
-// 2. Parse Markdown notes
+// 1. Parse Markdown Notes
 if (fs.existsSync(NOTES_DIR)) {
   const noteFiles = fs.readdirSync(NOTES_DIR).filter(f => f.endsWith(".md"));
   for (const file of noteFiles) {
@@ -72,19 +56,21 @@ if (fs.existsSync(NOTES_DIR)) {
       rawFile: file
     });
 
-    // Parse tables if present: | Verb | Präposition | Kasus | Bedeutung (TR) | Meaning (EN) | Beispielsatz |
     const lines = markdownBody.split("\n");
     for (const line of lines) {
-      if (line.startsWith("|") && !line.includes("---") && !line.toLowerCase().includes("verb |")) {
+      if (line.startsWith("|") && !line.includes("---")) {
         const parts = line.split("|").map(s => s.trim()).filter(Boolean);
-        if (parts.length >= 6) {
+        const headerTest = parts.join(" ").toLowerCase();
+        if (headerTest.includes("modalverb |") || headerTest.includes("verb |") || headerTest.includes("substantiv |") || headerTest.includes("wort |")) {
+          continue;
+        }
+
+        // Format 1: Verb + Präposition table: | Verb | Präposition | Kasus | Bedeutung (TR) | Meaning (EN) | Beispielsatz |
+        if (parts.length >= 6 && (parts[2].toLowerCase().includes("akk") || parts[2].toLowerCase().includes("dat"))) {
           const [verb, prep, kasus, meaningTr, meaningEn, example] = parts;
           const verbClean = verb.replace(/`/g, "");
           const verbId = `verb-${verbClean.toLowerCase().replace(/\s+/g, "-")}`;
-          const prepId = `prep-${prep.toLowerCase()}`;
-          const caseId = `case-${kasus.toLowerCase().startsWith("akk") ? "akk" : "dat"}`;
 
-          // Add to vocabulary
           vocabularyList.push({
             id: verbId,
             german: verbClean,
@@ -100,33 +86,51 @@ if (fs.existsSync(NOTES_DIR)) {
               perfekt: `hat ${verbClean}t`
             }
           });
+        }
 
-          // Add to graph
-          addGraphNode({
-            id: verbId,
-            label: verbClean,
-            type: "verb",
-            level: frontmatter.level || "B1",
-            meaningTr,
-            meaningEn,
-            example,
-            prep,
-            kasus
-          });
+        // Format 2: Substantiv table: | Substantiv | Plural | Bedeutung (EN) | Anlam (TR) | Beispielsatz |
+        else if (parts.length >= 5 && (parts[0].startsWith("der ") || parts[0].startsWith("die ") || parts[0].startsWith("das "))) {
+          const [nounWithArt, plural, meaningEn, meaningTr, example] = parts;
+          const artMatch = nounWithArt.match(/^(der|die|das)\s+(.+)$/i);
+          if (artMatch) {
+            const article = artMatch[1].toLowerCase();
+            const word = artMatch[2].trim();
+            const id = `noun-${word.toLowerCase().replace(/\s+/g, "-")}`;
 
-          if (prep) {
-            addGraphNode({ id: prepId, label: prep, type: "preposition" });
-            addGraphEdge({
-              source: verbId,
-              target: prepId,
-              relation: "takes_preposition",
-              label: `+ ${prep}`
+            vocabularyList.push({
+              id,
+              german: word,
+              article,
+              plural: plural.replace(/^die\s+/i, ""),
+              type: "substantiv",
+              meaningTr,
+              meaningEn,
+              example,
+              level: frontmatter.level || "B1"
             });
-            addGraphEdge({
-              source: prepId,
-              target: caseId,
-              relation: "governs_case",
-              label: `+ ${kasus}`
+          }
+        }
+
+        // Format 3: Wort / Nuancen: | Wort | Wortart | Bedeutung (EN) | Anlam (TR) | Kontext |
+        else if (parts.length >= 5 && (parts[1].toLowerCase().includes("verb") || parts[1].toLowerCase().includes("substantiv") || parts[1].toLowerCase().includes("adjektiv"))) {
+          const [word, pos, meaningEn, meaningTr, context] = parts;
+          let article = undefined;
+          let cleanWord = word;
+          if (word.startsWith("der ") || word.startsWith("die ") || word.startsWith("das ")) {
+            article = word.slice(0, 3).toLowerCase();
+            cleanWord = word.slice(4).trim();
+          }
+          const id = `word-${cleanWord.toLowerCase().replace(/\s+/g, "-")}`;
+          if (!vocabularyList.some(v => v.id === id)) {
+            vocabularyList.push({
+              id,
+              german: cleanWord,
+              article,
+              type: pos.toLowerCase().includes("verb") ? "verb" : pos.toLowerCase().includes("substantiv") ? "substantiv" : "adjektiv",
+              meaningTr,
+              meaningEn,
+              example: context,
+              level: frontmatter.level || "B1"
             });
           }
         }
@@ -135,7 +139,7 @@ if (fs.existsSync(NOTES_DIR)) {
   }
 }
 
-// 3. Parse Connectors from Note 02 or generate structured connectors
+// 2. Add Predefined Rich Connectors
 const predefinedConnectors = [
   // Gruppe 1: Position 0 (ADUSO)
   {
@@ -280,6 +284,34 @@ const predefinedConnectors = [
     notesTr: "Amaç bildirir (Finalsatz). Özneler farklı olsa bile kullanılır.",
     notesEn: "Expresses purpose (Final clause). Used even with differing subjects."
   },
+  {
+    id: "conn-da",
+    name: "da",
+    group: "nebensatz",
+    groupTitleTr: "Nebensatz (Fiil Sonda)",
+    groupTitleEn: "Subordinate (Verb at End)",
+    formula: "Da + Subjekt + ... + Verb, [Verb + Subjekt...]",
+    meaningTr: "mademki, -dığı için",
+    meaningEn: "since, as, because",
+    example: "Da er krank ist, kann er heute leider nicht zur Arbeit kommen.",
+    level: "B1",
+    notesTr: "Sebep önceden biliniyorsa cümle genellikle 'da' ile başlar. Fiil sonda.",
+    notesEn: "Often starts sentence when cause is already known. Verb at end."
+  },
+  {
+    id: "conn-waehrend",
+    name: "während",
+    group: "nebensatz",
+    groupTitleTr: "Nebensatz (Fiil Sonda)",
+    groupTitleEn: "Subordinate (Verb at End)",
+    formula: "..., während + Subjekt + ... + VERB (Ende)",
+    meaningTr: "-iken, esnasında",
+    meaningEn: "while, whereas",
+    example: "Während sie kocht, hört sie einen deutschen Podcast.",
+    level: "B1",
+    notesTr: "Eşzamanlılık bildirir. Fiil cümlenin en sonundadır.",
+    notesEn: "Expresses simultaneous actions. Verb at end."
+  },
 
   // Gruppe 3: Adverbiale Konnektoren (Pos 1)
   {
@@ -337,6 +369,20 @@ const predefinedConnectors = [
     level: "B1",
     notesTr: "Ek bilgi ekler. Pozisyon 1.",
     notesEn: "Adds complementary info. Position 1."
+  },
+  {
+    id: "conn-danach",
+    name: "danach",
+    group: "position_1",
+    groupTitleTr: "Pozisyon 1 (Fiil Hemen Sonra)",
+    groupTitleEn: "Position 1 (Verb Immediately Next)",
+    formula: "Hauptsatz. Danach + VERB + Subjekt + ...",
+    meaningTr: "ondan sonra, ardından",
+    meaningEn: "afterwards, then",
+    example: "Wir aßen gemütlich zu Abend, danach gingen wir im Park spazieren.",
+    level: "A2",
+    notesTr: "Zaman sırası bildirir. Pozisyon 1.",
+    notesEn: "Chronological sequence. Position 1."
   },
 
   // Gruppe 4: Zweiteilige Konnektoren
@@ -400,156 +446,134 @@ const predefinedConnectors = [
 
 connectorsList.push(...predefinedConnectors);
 
-// Add connectors to graph
-for (const conn of predefinedConnectors) {
-  addGraphNode({
-    id: conn.id,
-    label: conn.name,
-    type: "connector",
-    category: conn.groupTitleTr,
-    level: conn.level,
-    meaningTr: conn.meaningTr,
-    meaningEn: conn.meaningEn,
-    formula: conn.formula,
-    example: conn.example
-  });
-}
+// 3. Add Rich High-Frequency German Vocabulary (A1-B2)
+const extraCuratedVocab = [
+  // High value words & idioms
+  { id: "cur-1", german: "Feierabend", article: "der", plural: "Feierabende", type: "substantiv", meaningEn: "end of the working day", meaningTr: "iş çıkışı / mesai bitimi", level: "A2", example: "Schönen Feierabend! Bis morgen im Büro." },
+  { id: "cur-2", german: "Sehnsucht", article: "die", plural: "Sehnsüchte", type: "substantiv", meaningEn: "deep longing / yearning", meaningTr: "hasret, derin özlem", level: "B1", example: "Sie hat große Sehnsucht nach ihrer Heimatstadt." },
+  { id: "cur-3", german: "Fernweh", article: "das", type: "substantiv", meaningEn: "wanderlust / craving for travel", meaningTr: "uzak diyarlara gitme arzusu", level: "B1", example: "Im grauen Winter bekomme ich oft starkes Fernweh." },
+  { id: "cur-4", german: "Gemütlichkeit", article: "die", type: "substantiv", meaningEn: "coziness, snugness", meaningTr: "rahatlık, sıcacık samimi ortam", level: "B1", example: "Wir schätzen die Gemütlichkeit unseres Wohnzimmers." },
+  { id: "cur-5", german: "Verabredung", article: "die", plural: "Verabredungen", type: "substantiv", meaningEn: "appointment / date with friends", meaningTr: "arkadaşla buluşma / randevu", level: "A2", example: "Ich habe heute Abend eine Verabredung mit Freunden." },
+  { id: "cur-6", german: "Aufenthaltserlaubnis", article: "die", plural: "Aufenthaltserlaubnisse", type: "substantiv", meaningEn: "residence permit", meaningTr: "oturum izni", level: "B1", example: "Die Aufenthaltserlaubnis muss rechtzeitig verlängert werden." },
+  { id: "cur-7", german: "Labyrinth", article: "das", plural: "Labyrinthe", type: "substantiv", meaningEn: "maze / labyrinth", meaningTr: "labirent", level: "B1", example: "Die deutsche Bürokratie schien am Anfang wie ein Labyrinth." },
+  { id: "cur-8", german: "Herausforderung", article: "die", plural: "Herausforderungen", type: "substantiv", meaningEn: "challenge", meaningTr: "meydan okuma, zorluk", level: "B1", example: "Eine neue Sprache zu lernen ist eine spannende Herausforderung." },
+  { id: "cur-9", german: "Beständigkeit", article: "die", type: "substantiv", meaningEn: "consistency, persistence", meaningTr: "istikrar, kararlılık", level: "B1", example: "Erfolg beim Deutschlernen braucht tägliche Beständigkeit." },
+  { id: "cur-10", german: "Unterschied", article: "der", plural: "Unterschiede", type: "substantiv", meaningEn: "difference", meaningTr: "fark, ayrım", level: "A2", example: "Was ist der Unterschied zwischen diesen beiden Wörtern?" },
+  { id: "cur-11", german: "Überraschung", article: "die", plural: "Überraschungen", type: "substantiv", meaningEn: "surprise", meaningTr: "sürpriz", level: "A2", example: "Die Feier war eine gelungene Überraschung für ihn." },
+  { id: "cur-12", german: "Bedingung", article: "die", plural: "Bedingungen", type: "substantiv", meaningEn: "condition, term", meaningTr: "şart, koşul", level: "B1", example: "Unter dieser Bedingung kann ich den Vertrag unterschreiben." },
+  { id: "cur-13", german: "Lärm", article: "der", type: "substantiv", meaningEn: "noise, clamor", meaningTr: "gürültü", level: "A2", example: "Der nächtliche Lärm der Großstadt stört meinen Schlaf." },
+  { id: "cur-14", german: "Erfahrung", article: "die", plural: "Erfahrungen", type: "substantiv", meaningEn: "experience", meaningTr: "deneyim, tecrübe", level: "B1", example: "Er hat bereits mehrjährige Erfahrung im Ingenieurwesen." },
+  { id: "cur-15", german: "Vorstellungsgespräch", article: "das", plural: "Vorstellungsgespräche", type: "substantiv", meaningEn: "job interview", meaningTr: "iş mülakatı", level: "B1", example: "Morgen um 10 Uhr habe ich ein wichtiges Vorstellungsgespräch." },
 
-// 4. Parse raw files from /data/raw
-if (fs.existsSync(RAW_DIR)) {
-  const rawFiles = fs.readdirSync(RAW_DIR);
-  for (const file of rawFiles) {
-    const rawPath = path.join(RAW_DIR, file);
-    const stat = fs.statSync(rawPath);
-    if (stat.isFile() && (file.endsWith(".txt") || file.endsWith(".md"))) {
-      const text = fs.readFileSync(rawPath, "utf-8");
-      // Extract nouns: "- die Bewerbung, -en (başvuru / application)"
-      const nounRegex = /^-\s+(der|die|das)\s+([A-ZÄÖÜ][a-zäöüßA-Z-]+)(?:,\s*([^(\n]+))?\s*\(([^/)]+)\s*\/\s*([^)]+)\)/gm;
-      let match;
-      while ((match = nounRegex.exec(text)) !== null) {
-        const article = match[1].toLowerCase();
-        const word = match[2];
-        const pluralEnding = (match[3] || "").trim();
-        const meaningTr = match[4].trim();
-        const meaningEn = match[5].trim();
-        const id = `noun-${word.toLowerCase()}`;
+  // Verbs with Prepositions (additional)
+  { id: "cur-v1", german: "achten auf", preposition: "auf", governedCase: "Akk", type: "verb", meaningEn: "to pay attention to", meaningTr: "dikkat etmek", level: "B1", example: "Bitte achten Sie auf die Durchsagen am Bahnsteig." },
+  { id: "cur-v2", german: "ankommen auf", preposition: "auf", governedCase: "Akk", type: "verb", meaningEn: "to depend on", meaningTr: "bağlı olmak", level: "B1", example: "Es kommt auf das Wetter am Wochenende an." },
+  { id: "cur-v3", german: "bitten um", preposition: "um", governedCase: "Akk", type: "verb", meaningEn: "to ask for", meaningTr: "rica etmek, dilemek", level: "A2", example: "Darf ich Sie um einen kurzen Gefallen bitten?" },
+  { id: "cur-v4", german: "zweifeln an", preposition: "an", governedCase: "Dat", type: "verb", meaningEn: "to doubt", meaningTr: "şüphe duymak", level: "B1", example: "Ich zweifle nicht an deinen Fähigkeiten." },
+  { id: "cur-v5", german: "leiden an", preposition: "an", governedCase: "Dat", type: "verb", meaningEn: "to suffer from (disease)", meaningTr: "muzdarip olmak (hastalık)", level: "B1", example: "Viele Menschen leiden an saisonalen Allergien." },
+  { id: "cur-v6", german: "passen zu", preposition: "zu", governedCase: "Dat", type: "verb", meaningEn: "to match / go well with", meaningTr: "yakışmak, uymak", level: "A2", example: "Das blaue Hemd passt perfekt zu deiner Hose." },
+  { id: "cur-v7", german: "verzichten auf", preposition: "auf", governedCase: "Akk", type: "verb", meaningEn: "to do without / forfeit", meaningTr: "feragat etmek, vazgeçmek", level: "B1", example: "Er kann morgens nicht auf seinen Kaffee verzichten." },
+  { id: "cur-v8", german: "sich gewöhnen an", preposition: "an", governedCase: "Akk", type: "verb", meaningEn: "to get used to", meaningTr: "alışmak", level: "B1", example: "Ich habe mich schnell an das kalte Wetter gewöhnt." },
 
-        vocabularyList.push({
-          id,
-          german: word,
-          article,
-          plural: pluralEnding ? `${word}${pluralEnding}` : undefined,
-          type: "substantiv",
-          meaningTr,
-          meaningEn,
-          level: "B1"
-        });
-
-        addGraphNode({
-          id,
-          label: `${article} ${word}`,
-          type: "noun",
-          article,
-          meaningTr,
-          meaningEn
-        });
-      }
-
-      // Extract verbs: "- vorbereiten auf + Akk (bir şeye hazırlanmak / to prepare for): Er bereitet sich auf..."
-      const verbRegex = /^-\s+([a-zäöüßA-Z\s]+?)\s+(?:auf|an|für|um|mit|von|zu|nach)?\s*(?:\+\s*(Akk|Dat))?\s*\(([^/)]+)\s*\/\s*([^)]+)\)(?::\s*([^\n]+))?/gm;
-      while ((match = verbRegex.exec(text)) !== null) {
-        const verbName = match[1].trim();
-        if (verbName.length < 3) continue;
-        const governedCase = match[2] || undefined;
-        const meaningTr = match[3].trim();
-        const meaningEn = match[4].trim();
-        const example = (match[5] || "").trim();
-        const id = `verb-${verbName.toLowerCase().replace(/\s+/g, "-")}`;
-
-        if (!vocabularyList.some(v => v.id === id)) {
-          vocabularyList.push({
-            id,
-            german: verbName,
-            type: "verb",
-            governedCase,
-            meaningTr,
-            meaningEn,
-            example,
-            level: "B1"
-          });
-
-          addGraphNode({
-            id,
-            label: verbName,
-            type: "verb",
-            meaningTr,
-            meaningEn,
-            example
-          });
-        }
-      }
-    }
-  }
-}
-
-// 5. Add Root Derivation links in graph
-const rootDerivations = [
-  { root: "verb-warten", derivatives: ["verb-erwarten", "verb-abwarten"], meanings: ["ummak, beklemek / to expect", "bekleyip görmek / to wait and see"] },
-  { root: "verb-sprechen", derivatives: ["verb-besprechen", "verb-versprechen"], meanings: ["müzakere etmek / to discuss", "söz vermek / to promise"] },
-  { root: "verb-denken", derivatives: ["verb-nachdenken", "verb-ausdenken"], meanings: ["üzerinde düşünmek / to reflect", "uydurmak / to invent"] }
+  // Modal Verbs as study cards
+  { id: "cur-m1", german: "müssen", type: "verb", meaningEn: "must / to have to", meaningTr: "zorunda olmak", level: "A1", example: "Ich muss heute pünktlich im Büro sein." },
+  { id: "cur-m2", german: "können", type: "verb", meaningEn: "can / to be able to", meaningTr: "-ebilmek, yeteneği olmak", level: "A1", example: "Er kann fließend Deutsch und Englisch sprechen." },
+  { id: "cur-m3", german: "dürfen", type: "verb", meaningEn: "may / to be allowed to", meaningTr: "izni olmak", level: "A1", example: "Hier darf man leider nicht parken." },
+  { id: "cur-m4", german: "wollen", type: "verb", meaningEn: "to want to", meaningTr: "istemek, niyeti olmak", level: "A1", example: "Wir wollen im Sommer ans Meer fahren." },
+  { id: "cur-m5", german: "sollen", type: "verb", meaningEn: "should / to be supposed to", meaningTr: "-meli, tavsiye edilmek", level: "A2", example: "Du sollst täglich mindestens zwei Liter Wasser trinken." },
+  { id: "cur-m6", german: "möchten", type: "verb", meaningEn: "would like to", meaningTr: "istemek (kibarca)", level: "A1", example: "Ich möchte bitte einen schwarzen Kaffee ohne Zucker." }
 ];
 
-for (const group of rootDerivations) {
-  if (nodeMap.has(group.root)) {
-    group.derivatives.forEach((dId, idx) => {
-      const cleanName = dId.replace("verb-", "");
-      addGraphNode({
-        id: dId,
-        label: cleanName,
-        type: "verb",
-        level: "B1",
-        meaningTr: group.meanings[idx].split("/")[0].trim(),
-        meaningEn: group.meanings[idx].split("/")[1]?.trim() || "",
-        category: "Stammverb-Ableitung"
-      });
-      addGraphEdge({
-        source: group.root,
-        target: dId,
-        relation: "root_derivation",
-        label: "Kök türevi"
-      });
-    });
+for (const item of extraCuratedVocab) {
+  if (!vocabularyList.some(v => v.id === item.id || v.german.toLowerCase() === item.german.toLowerCase())) {
+    vocabularyList.push(item);
   }
 }
 
-// 6. Read exercises
+// 4. Read Exercises
 let exercises = [];
 if (fs.existsSync(EXERCISES_FILE)) {
   exercises = JSON.parse(fs.readFileSync(EXERCISES_FILE, "utf-8"));
 }
 
-// 7. Compile Database
+// Add extra modalverb and zeitangaben exercises
+const extraExercises = [
+  {
+    id: "ex-modal-1",
+    type: "cloze",
+    category: "Modalverben",
+    level: "A2",
+    promptTr: "Cümleye uygun modal fiili seçin.",
+    promptEn: "Choose the correct modal verb for this context.",
+    sentenceParts: ["Der Arzt sagt, ich ", " mich schonen und keinen Sport machen."],
+    options: ["soll", "will", "darf", "mag"],
+    correctAnswer: "soll",
+    explanationTr: "Doktorun veya bir başkasının tavsiyesi aktarılırken 'sollen' (ich soll) kullanılır.",
+    explanationEn: "When conveying medical advice or recommendation from someone else, 'sollen' (ich soll) is used."
+  },
+  {
+    id: "ex-modal-2",
+    type: "sentence_builder",
+    category: "Modalverb Satzstellung",
+    level: "A2",
+    promptTr: "Kelimeleri doğru modal fiil kuralına (Modalverb Pos 2, Infinitiv am Ende) göre dizin.",
+    promptEn: "Arrange words according to modal verb syntax (Modalverb Pos 2, Infinitive at the end).",
+    words: ["Ich", "muss", "am", "Montag", "früh", "aufstehen"],
+    correctOrder: ["Ich", "muss", "am", "Montag", "früh", "aufstehen"],
+    targetMeaningTr: "Pazartesi günü erken kalkmak zorundayım.",
+    targetMeaningEn: "I have to get up early on Monday.",
+    explanationTr: "Kural: Çekimli modal fiil 2. pozisyondadır ('muss'), asıl fiil ise yalın halde (Infinitiv) cümlenin en sonuna gider ('aufstehen').",
+    explanationEn: "Rule: Conjugated modal verb is in position 2 ('muss'), while main verb in infinitive is placed at the very end ('aufstehen')."
+  },
+  {
+    id: "ex-time-1",
+    type: "cloze",
+    category: "Zeitangaben (im / am / um)",
+    level: "A1-A2",
+    promptTr: "Doğru zaman edatını seçin.",
+    promptEn: "Select the correct temporal preposition.",
+    sentenceParts: ["Wir treffen uns ", " Dienstag um 15 Uhr."],
+    options: ["am", "im", "um", "in"],
+    correctAnswer: "am",
+    explanationTr: "Haftanın günleri için 'am' (an + dem) kullanılır: am Dienstag, am Montag...",
+    explanationEn: "For days of the week, 'am' (an + dem) is used: am Dienstag, am Montag..."
+  },
+  {
+    id: "ex-time-2",
+    type: "cloze",
+    category: "Zeitangaben (im / am / um)",
+    level: "A1-A2",
+    promptTr: "Mevsimler ve aylar için doğru edatı seçin.",
+    promptEn: "Select the correct preposition for seasons and months.",
+    sentenceParts: ["Ich habe ", " Juli zwei Wochen Urlaub."],
+    options: ["im", "am", "um", "an"],
+    correctAnswer: "im",
+    explanationTr: "Aylar ve mevsimler için 'im' (in + dem) kullanılır: im Juli, im Sommer...",
+    explanationEn: "For months and seasons, 'im' (in + dem) is used: im Juli, im Sommer..."
+  }
+];
+
+for (const ex of extraExercises) {
+  if (!exercises.some(e => e.id === ex.id)) {
+    exercises.push(ex);
+  }
+}
+
+// 5. Compile Database
 const database = {
   metadata: {
     lastSynced: new Date().toISOString(),
     totalVocabulary: vocabularyList.length,
     totalConnectors: connectorsList.length,
     totalNotes: textNotes.length,
-    totalGraphNodes: graphNodes.length,
-    totalGraphEdges: graphEdges.length,
     totalExercises: exercises.length
   },
   vocabulary: vocabularyList,
   connectors: connectorsList,
   notes: textNotes,
-  exercises,
-  graph: {
-    nodes: graphNodes,
-    edges: graphEdges
-  }
+  exercises
 };
 
-// Write output
 const outPath1 = path.join(GENERATED_DIR, "db.json");
 const outPath2 = path.join(PUBLIC_DATA_DIR, "db.json");
 
@@ -560,6 +584,5 @@ console.log(`✅ Data synced successfully!`);
 console.log(`   - Vocabulary: ${vocabularyList.length} items`);
 console.log(`   - Connectors: ${connectorsList.length} items`);
 console.log(`   - Notes: ${textNotes.length} documents`);
-console.log(`   - Graph: ${graphNodes.length} nodes, ${graphEdges.length} edges`);
 console.log(`   - Exercises: ${exercises.length} interactive exercises`);
 console.log(`   -> Written to ${outPath1} and ${outPath2}`);

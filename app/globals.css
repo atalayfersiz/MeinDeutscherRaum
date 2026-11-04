@@ -46,3 +46,30 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Gentle floating ambient word particles */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--tw-opacity, 0.35);
+  }
+  50% {
+    transform: translateY(-55vh) translateX(15px) rotate(1deg);
+  }
+  85% {
+    opacity: var(--tw-opacity, 0.35);
+  }
+  100% {
+    transform: translateY(-115vh) translateX(-15px) rotate(-1deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation-name: floatUp;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

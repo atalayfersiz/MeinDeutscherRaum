@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { 
   GitBranch, 
@@ -12,10 +12,11 @@ import {
   Sparkles,
   CheckCircle2,
   AlertCircle,
-  Scale
+  Scale,
+  BookMarked
 } from "lucide-react";
 
-export type ActiveTab = "connectors" | "kasus" | "vocab" | "reader";
+export type ActiveTab = "topics" | "connectors" | "kasus" | "vocab" | "reader";
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -35,18 +36,38 @@ export function Header({
   lastSynced
 }: HeaderProps) {
   const { lang, setLang, t } = useLanguage();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("mdr_theme");
+    if (saved === "light") {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    } else {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+    if (nextDark) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("mdr_theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("mdr_theme", "light");
     }
   };
 
   const navItems: { id: ActiveTab; labelTr: string; labelEn: string; icon: React.ReactNode }[] = [
+    {
+      id: "topics",
+      labelTr: "Ders Notları & Konular",
+      labelEn: "Topics & Notes",
+      icon: <BookMarked className="w-4 h-4" />
+    },
     {
       id: "connectors",
       labelTr: "Bağlaçlar Matrisi",

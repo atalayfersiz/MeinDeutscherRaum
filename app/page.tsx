@@ -4,17 +4,19 @@ import React, { useState, useEffect } from "react";
 import initialData from "@/data/generated/db.json";
 import { AppDatabase } from "@/types";
 import { Header, ActiveTab } from "@/components/Header";
+import { ThemenHub } from "@/components/ThemenHub";
 import { KonnektorenHub } from "@/components/KonnektorenHub";
 import { KasusHub } from "@/components/KasusHub";
 import { SmartVocabulary } from "@/components/SmartVocabulary";
 import { FocusReaderAndPractice } from "@/components/FocusReaderAndPractice";
+import { FloatingWords } from "@/components/FloatingWords";
 import { SyncModal } from "@/components/SyncModal";
 import { useLanguage } from "@/lib/language-context";
 
 export default function Home() {
   const { lang, t } = useLanguage();
   const [data, setData] = useState<AppDatabase>(initialData as AppDatabase);
-  const [activeTab, setActiveTab] = useState<ActiveTab>("connectors");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("topics");
   const [isSyncing, setIsSyncing] = useState(false);
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false);
 
@@ -62,8 +64,15 @@ export default function Home() {
         lastSynced={data.metadata?.lastSynced}
       />
 
+      {/* Ambient Floating Words in Background */}
+      <FloatingWords />
+
       {/* Main Content Area */}
-      <main className="flex-1 w-full pb-16">
+      <main className="flex-1 w-full pb-16 relative z-10">
+        {activeTab === "topics" && (
+          <ThemenHub />
+        )}
+
         {activeTab === "connectors" && (
           <KonnektorenHub
             connectors={data.connectors}
